@@ -1,8 +1,8 @@
 import express from "express";
 import { validationResult } from "express-validator";
 import { validateSignup } from "../utils/validation.js";
-import User from "../models/user.js";
 import { errorMessages } from "../utils/constants.js";
+import { createUser } from "../services/user.js";
 const router = express.Router();
 
 router.post("/signup", validateSignup, async (req, res) => {
@@ -14,11 +14,7 @@ router.post("/signup", validateSignup, async (req, res) => {
       });
     }
     const { name, email, password } = req.body;
-    await User.create({
-      name,
-      email,
-      password,
-    });
+    await createUser(name, email, password);
     return res.status(201).json({
       message: "User registered successfully",
     });

@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha './tests/**/*.test.js'",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
@@ -13,10 +13,14 @@
   "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "chai": "^5.1.2",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-validator": "^7.2.1",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.9.4"
+    "mocha": "^11.0.1",
+    "mongoose": "^8.9.4",
+    "sinon": "^7.5.0",
+    "sinon-mongoose": "^2.3.0"
   }
 }
