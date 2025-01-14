@@ -1,7 +1,7 @@
 import * as chai from "chai";
 import sinon from "sinon";
 import User from "../models/user.js";
-import { createUser, loginUser } from "../services/user.js";
+import { createUser, loginUser, refreshAccessToken } from "../services/user.js";
 
 const { expect } = chai;
 
@@ -69,6 +69,16 @@ describe("user Service", () => {
   });
 
   it("should throw error with wrong creds", async () => {
+    const mockError = new Error("Database error");
+    sinon.stub(User, "findOne").rejects(mockError);
+    try {
+      await loginUser("John Doe", "john.doe@example.com", "password13");
+    } catch (error) {
+      expect(error).to.equal(mockError);
+    }
+  });
+
+  it("should refresh token", async () => {
     const mockUserData = {
       _id: "64b1f0ec7cbe1a345f44e7d3",
       email: "john.doe@example.com",
@@ -78,13 +88,29 @@ describe("user Service", () => {
       validatePassword: sinon.stub().resolves(true),
       save: sinon.stub().resolves(true),
     };
+    sinon.stub(User, "findOne").resolves(mockUserData);
 
+    const result = await loginUser("john.doe@example.com", "hashedPassword123");
+    const refreshToken = result?.refreshToken;
+    const refreshTokenResult = await refreshAccessToken(refreshToken);
+    expect(refreshTokenResult).to.have.property("refreshToken");
+  });
+  it("should refresh token", async () => {
+    const mockUserData = {
+      _id: "64b1f0ec7cbe1a345f44e7d3",
+      email: "john.doe@example.com",
+      password: "hashedPassword123",
+      name: "John Doe",
+      isVerified: false,
+      validatePassword: sinon.stub().resolves(true),
+      save: sinon.stub().resolves(true),
+    };
     const mockError = new Error("Database error");
     sinon.stub(User, "findOne").rejects(mockError);
     try {
-      await loginUser("John Doe", "john.doe@example.com", "password13");
+      await refreshAccessToken("wrongrefreshToken");
     } catch (error) {
-      expect(error).to.equal(mockError);
+      expect(error?.message).to.equal("jwt malformed");
     }
   });
 });

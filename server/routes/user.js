@@ -2,7 +2,13 @@ import express from "express";
 import { validationResult } from "express-validator";
 import { validateSignup } from "../utils/validation.js";
 import { errorMessages } from "../utils/constants.js";
-import { createUser, loginUser } from "../services/user.js";
+import {
+  createUser,
+  loginUser,
+  logoutUser,
+  refreshAccessToken,
+} from "../services/user.js";
+import { isUserLoggedIn } from "../utils/middlewares.js";
 const router = express.Router();
 
 router.post("/signup", validateSignup, async (req, res) => {
@@ -34,14 +40,14 @@ router.post("/login", async (req, res) => {
       httpOnly: true, // Prevent client-side JavaScript access
       secure: process.env.NODE_ENV === "production", // Ensure HTTPS in production
       sameSite: "strict", // Protect against CSRF
-      maxAge: 10 * 1000,
+      maxAge: 15 * 60 * 1000,
     });
 
     res.cookie("refreshToken", userDetails.refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
-      maxAge: 30 * 1000,
+      maxAge: 7 * 24 * 60 * 60 * 1000,
     });
     res.status(200).json({
       email: userDetails.email,
@@ -56,11 +62,50 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.post("/logout", (req, res) => {
-  res.clearCookie("token");
-  res.clearCookie("refreshToken");
-  res.status(200).json({ message: "Logged out successfully" });
+router.post("/refresh-token", async (req, res) => {
+  try {
+    const refreshToken = req.cookies.refreshToken;
+    if (!refreshToken) {
+      const error = new Error("Unauthorized");
+      error.status = 401;
+      throw error;
+    }
+    const userDetails = await refreshAccessToken(refreshToken);
+    res.cookie("token", userDetails.token, {
+      httpOnly: true, // Prevent client-side JavaScript access
+      secure: process.env.NODE_ENV === "production", // Ensure HTTPS in production
+      sameSite: "strict", // Protect against CSRF
+      maxAge: 15 * 60 * 1000,
+    });
+
+    res.cookie("refreshToken", userDetails.refreshToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+    });
+    res.status(200).json({
+      message: "OK",
+    });
+  } catch (error) {
+    res.status(error.status || 500).json({
+      message:
+        errorMessages[error.code] || error.message || "Error refreshing token",
+    });
+  }
 });
 
+router.post("/logout", isUserLoggedIn, (req, res) => {
+  try {
+    logoutUser(req.user?.email);
+    res.clearCookie("token");
+    res.clearCookie("refreshToken");
+    res.status(200).json({ message: "Logged out successfully" });
+  } catch (error) {
+    res.status(error.status || 500).json({
+      message: errorMessages[error.code] || error.message || "Unable to logout",
+    });
+  }
+});
 
 export default router;
