@@ -61,7 +61,7 @@ describe("user Service", () => {
       validatePassword: sinon.stub().resolves(true),
       save: sinon.stub().resolves(true),
     };
-    const findOneStub = sinon.stub(User, "findOne").resolves(mockUserData);
+    sinon.stub(User, "findOne").resolves(mockUserData);
 
     const result = await loginUser("john.doe@example.com", "password13");
 

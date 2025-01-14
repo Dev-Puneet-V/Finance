@@ -56,4 +56,11 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.post("/logout", (req, res) => {
+  res.clearCookie("token");
+  res.clearCookie("refreshToken");
+  res.status(200).json({ message: "Logged out successfully" });
+});
+
+
 export default router;

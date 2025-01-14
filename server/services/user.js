@@ -63,4 +63,12 @@ const loginUser = async (email, inputPassword) => {
   }
 };
 
-export { createUser, loginUser };
+const logoutUser = async (email) => {
+  try {
+    await User.updateOne({ email }, { $unset: { token: 1, refreshToken: 1 } });
+  } catch (error) {
+    throw error;
+  }
+};
+
+export { createUser, loginUser, logoutUser };
