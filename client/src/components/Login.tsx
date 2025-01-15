@@ -1,23 +1,47 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Formik } from "formik";
+import { Formik, FormikHelpers } from "formik";
+import { toast } from "react-toastify";
 import { NewUser } from "../utils/types";
+import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
-  const [isSignUp, setIsSignUp] = useState(true);
+  const [isSignUp, setIsSignUp] = useState<boolean>(true);
+  const navigate = useNavigate();
+
   const handleButtonClick = async (
     values: NewUser,
-    setSubmitting: { (isSubmitting: boolean): void; (arg0: boolean): void }
+    setSubmitting: FormikHelpers<NewUser>["setSubmitting"]
   ) => {
-    console.log(values);
-    if (isSignUp) {
-      const response = await axios.post("/user/signup", values);
-      const data = response.data;
-      console.log(data);
-    } else {
+    try {
+      if (isSignUp) {
+        let response = await axios.post(
+          "http://localhost:3000/api/user/signup",
+          values
+        );
+        const data = response.data;
+        toast.success(data.message);
+        setIsSignUp(false);
+      } else {
+        let response = await axios.post(
+          "http://localhost:3000/api/user/login",
+          values
+        );
+        const data = response.data;
+        toast.success("Welcome back! " + data?.name);
+        navigate("home");
+      }
+    } catch (error: any) {
+      const errorMessage =
+        error?.response?.data?.message ||
+        error?.message ||
+        "Something went wrong";
+      toast.error(errorMessage);
+    } finally {
+      setSubmitting(false);
     }
-    setSubmitting(false);
   };
+
   return (
     <div className="flex w-screen h-screen bg-slate-900 justify-center items-center">
       <div className="rounded-[10px] bg-slate-700 h-auto w-auto shadow-xl p-5">
@@ -45,17 +69,10 @@ const Login: React.FC = () => {
             }
             return errors;
           }}
-          onSubmit={(values, { setSubmitting }) => {
-            // setTimeout(() => {
-            //   alert(
-            //     `${isSignUp ? "Sign-up" : "Sign-in"} details: ${JSON.stringify(
-            //       values,
-            //       null,
-            //       2
-            //     )}`
-            //   );
-            //   setSubmitting(false);
-            // }, 400);
+          onSubmit={(
+            values: NewUser,
+            { setSubmitting }: FormikHelpers<NewUser>
+          ) => {
             handleButtonClick(values, setSubmitting);
           }}
         >
@@ -72,7 +89,7 @@ const Login: React.FC = () => {
               onSubmit={handleSubmit}
               className="flex flex-col gap-3 items-center"
             >
-              {isSignUp && ( // Conditionally render Name field for sign-up
+              {isSignUp && (
                 <div>
                   <label
                     htmlFor="name"
