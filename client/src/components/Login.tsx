@@ -1,10 +1,23 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Formik } from "formik";
 import { NewUser } from "../utils/types";
 
 const Login: React.FC = () => {
   const [isSignUp, setIsSignUp] = useState(true);
-
+  const handleButtonClick = async (
+    values: NewUser,
+    setSubmitting: { (isSubmitting: boolean): void; (arg0: boolean): void }
+  ) => {
+    console.log(values);
+    if (isSignUp) {
+      const response = await axios.post("/user/signup", values);
+      const data = response.data;
+      console.log(data);
+    } else {
+    }
+    setSubmitting(false);
+  };
   return (
     <div className="flex w-screen h-screen bg-slate-900 justify-center items-center">
       <div className="rounded-[10px] bg-slate-700 h-auto w-auto shadow-xl p-5">
@@ -33,16 +46,17 @@ const Login: React.FC = () => {
             return errors;
           }}
           onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(
-                `${isSignUp ? "Sign-up" : "Sign-in"} details: ${JSON.stringify(
-                  values,
-                  null,
-                  2
-                )}`
-              );
-              setSubmitting(false);
-            }, 400);
+            // setTimeout(() => {
+            //   alert(
+            //     `${isSignUp ? "Sign-up" : "Sign-in"} details: ${JSON.stringify(
+            //       values,
+            //       null,
+            //       2
+            //     )}`
+            //   );
+            //   setSubmitting(false);
+            // }, 400);
+            handleButtonClick(values, setSubmitting);
           }}
         >
           {({

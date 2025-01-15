@@ -96,15 +96,6 @@ describe("user Service", () => {
     expect(refreshTokenResult).to.have.property("refreshToken");
   });
   it("should refresh token", async () => {
-    const mockUserData = {
-      _id: "64b1f0ec7cbe1a345f44e7d3",
-      email: "john.doe@example.com",
-      password: "hashedPassword123",
-      name: "John Doe",
-      isVerified: false,
-      validatePassword: sinon.stub().resolves(true),
-      save: sinon.stub().resolves(true),
-    };
     const mockError = new Error("Database error");
     sinon.stub(User, "findOne").rejects(mockError);
     try {
