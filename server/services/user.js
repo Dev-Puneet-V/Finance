@@ -3,6 +3,22 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
 
+const getUserDetails = async (userId) => {
+  try {
+    const userDetails = await User.findById(userId).select(
+      "-password -refreshToken -token"
+    );
+    if (!userDetails) {
+      const error = new Error("User not found");
+      error.status = 404;
+      throw error;
+    }
+    return userDetails;
+  } catch (error) {
+    throw error;
+  }
+};
+
 const createUser = async (name, email, password) => {
   try {
     const newUser = await User.create({
@@ -106,4 +122,10 @@ const logoutUser = async (email) => {
   }
 };
 
-export { createUser, loginUser, logoutUser, refreshAccessToken };
+export {
+  getUserDetails,
+  createUser,
+  loginUser,
+  logoutUser,
+  refreshAccessToken,
+};

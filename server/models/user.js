@@ -23,6 +23,12 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    transactionSummary: {
+      totalTransactions: { type: Number, default: 0 },
+      recentTransactions: [
+        { type: mongoose.Schema.Types.ObjectId, ref: "Transaction" },
+      ],
+    },
     token: String,
     refreshToken: String,
   },
@@ -40,5 +46,22 @@ userSchema.pre("save", async function (next) {
 userSchema.methods.validatePassword = async function (inputPassword) {
   return await bcrypt.compare(inputPassword, this.password);
 };
+
+userSchema.methods.addTransactions = async function (transactionId, session) {
+  // Add the new transaction to the beginning of the recentTransactions array
+  this.transactionSummary.recentTransactions.unshift(transactionId);
+  // If the array exceeds 10 transactions, remove the oldest one
+  if (this.transactionSummary.recentTransactions.length > 10) {
+    this.transactionSummary.recentTransactions.pop();
+  }
+  // If the array exceeds 10 transactions, remove the oldest one
+  if (this.transactionSummary.recentTransactions.length > 10) {
+    this.transactionSummary.recentTransactions.pop();
+  }
+
+  this.transactionSummary.totalTransactions += 1;
+
+  await this.save({ session });
+}
 
 export default mongoose.model("User", userSchema);

@@ -20,4 +20,18 @@ const validateSignup = [
     ),
 ];
 
-export { validateSignup };
+const validateTransaction = [
+  [
+    body("amount")
+      .isFloat({ min: 1 })
+      .withMessage("Amount must be greater than 0."),
+    body("category")
+      .isIn(["credit", "debit"])
+      .withMessage("Category must be either credit or debit."),
+    body("description")
+      .isLength({ min: 5 })
+      .withMessage("Description must be at least 5 characters long."),
+  ],
+];
+
+export { validateSignup, validateTransaction };

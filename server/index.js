@@ -19,9 +19,9 @@ app.use(cors(corsOptions));
 app.use(express.static(path.join(process.cwd(), "dist")));
 
 // Serve the index.html file for any route that doesn't match a static file
-app.get("*", (req, res) => {
-  res.sendFile(path.join(process.cwd(), "dist", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(process.cwd(), "dist", "index.html"));
+// });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

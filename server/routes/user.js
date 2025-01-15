@@ -4,6 +4,7 @@ import { validateSignup } from "../utils/validation.js";
 import { errorMessages } from "../utils/constants.js";
 import {
   createUser,
+  getUserDetails,
   loginUser,
   logoutUser,
   refreshAccessToken,
@@ -11,13 +12,28 @@ import {
 import { isUserLoggedIn } from "../utils/middlewares.js";
 const router = express.Router();
 
+router.get("/", isUserLoggedIn, async (req, res) => {
+  try {
+    const user = req.user;
+    const userDetails = await getUserDetails(user._id);
+    res.status(200).json({
+      message: "Data fetched successfully",
+      data: userDetails,
+    });
+  } catch (error) {
+    res.status(error.status || 500).json({
+      message:
+        errorMessages[error.code] || error.message || "Unable to sign up",
+    });
+  }
+});
 router.post("/signup", validateSignup, async (req, res) => {
   try {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({
-        errors: errors.array(),
-      });
+      const error = new Error(errors.array().join(","));
+      error.status = 400;
+      throw error;
     }
     const { name, email, password } = req.body;
     await createUser(name, email, password);
