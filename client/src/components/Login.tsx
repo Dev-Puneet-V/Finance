@@ -1,42 +1,34 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { Formik, FormikHelpers } from "formik";
 import { toast } from "react-toastify";
 import { NewUser } from "../utils/types";
 import { useNavigate } from "react-router-dom";
+import { CirclesWithBar } from 'react-loader-spinner'
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../utils/store"; 
+import { loginUser, signUpUser } from "../utils/slices/user";
 
 const Login: React.FC = () => {
   const [isSignUp, setIsSignUp] = useState<boolean>(true);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch<AppDispatch>();
+  const { loading, error } = useSelector((state: RootState) => state.user);
   const handleButtonClick = async (
     values: NewUser,
     setSubmitting: FormikHelpers<NewUser>["setSubmitting"]
   ) => {
     try {
       if (isSignUp) {
-        let response = await axios.post(
-          "http://localhost:3000/api/user/signup",
-          values
-        );
-        const data = response.data;
-        toast.success(data.message);
+        const result = await dispatch(signUpUser(values)).unwrap();
+        toast.success(result.message);
         setIsSignUp(false);
       } else {
-        let response = await axios.post(
-          "http://localhost:3000/api/user/login",
-          values
-        );
-        const data = response.data;
-        toast.success("Welcome back! " + data?.name);
-        navigate("home");
+        const result = await dispatch(loginUser(values)).unwrap();
+        toast.success(`Welcome back! ${result.name}`);
+        navigate("/home");
       }
     } catch (error: any) {
-      const errorMessage =
-        error?.response?.data?.message ||
-        error?.message ||
-        "Something went wrong";
-      toast.error(errorMessage);
+      toast.error(error);
     } finally {
       setSubmitting(false);
     }
@@ -69,10 +61,7 @@ const Login: React.FC = () => {
             }
             return errors;
           }}
-          onSubmit={(
-            values: NewUser,
-            { setSubmitting }: FormikHelpers<NewUser>
-          ) => {
+          onSubmit={(values: NewUser, { setSubmitting }: any) => {
             handleButtonClick(values, setSubmitting);
           }}
         >
@@ -158,9 +147,23 @@ const Login: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-slate-900 rounded-full font-bold text-white p-2 w-[100px]"
+                className="bg-slate-900 rounded-full font-bold text-white p-2 w-[140px] flex items-center justify-center gap-3"
               >
-                {isSignUp ? "Sign Up" : "Sign In"}
+                {loading && (
+                  <CirclesWithBar
+                    height="25"
+                    width="25"
+                    color="#ffffff"
+                    outerCircleColor="#ffffff"
+                    innerCircleColor="#ffffff"
+                    barColor="#ffffff"
+                    ariaLabel="circles-with-bar-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
+                  />
+                )}
+                <p>{isSignUp ? "Sign Up" : "Sign In"}</p>
               </button>
               <p className="text-slate-100 text-sm font-medium mt-2">
                 {isSignUp ? (
