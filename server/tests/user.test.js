@@ -1,7 +1,13 @@
 import * as chai from "chai";
 import sinon from "sinon";
+import sinonMongoose from "sinon-mongoose";
 import User from "../models/user.js";
-import { createUser, loginUser, refreshAccessToken } from "../services/user.js";
+import {
+  createUser,
+  getUserDetails,
+  loginUser,
+  refreshAccessToken,
+} from "../services/user.js";
 
 const { expect } = chai;
 
@@ -51,6 +57,51 @@ describe("user Service", () => {
     }
   });
 
+  it("should give user details with correct user id", async () => {
+    const mockUserData = {
+      _id: "64b1f0ec7cbe1a345f44e7d3",
+      email: "john.doe@example.com",
+      name: "John Doe",
+      isVerified: false,
+    };
+
+    //we need to import sinonmongoose to use chain here
+    const userMock = sinon.mock(User);
+    userMock
+      .expects("findById")
+      .withArgs("64b1f0ec7cbe1a345f44e7d3")
+      .chain("select")
+      .withArgs("-password -refreshToken -token") // Assuming you're excluding password, adjust as needed
+      .resolves(mockUserData);
+    const result = await getUserDetails("64b1f0ec7cbe1a345f44e7d3");
+    console.log(result);
+    expect(result).to.be.an("object");
+    expect(result).to.have.property("_id", "64b1f0ec7cbe1a345f44e7d3");
+    expect(result).to.have.property("email", "john.doe@example.com");
+    expect(result).to.have.property("name", "John Doe");
+    expect(result).to.have.property("isVerified", false);
+    userMock.verify();
+  });
+
+  it("should give error with wrong user id", async () => {
+    const mockError = new Error("User not found");
+    mockError.status = 404;
+    sinon
+      .mock(User)
+      .expects("findById")
+      .withArgs("64b1f0ec7cbe1a345f44e7d")
+      .chain("select")
+      .withArgs("-password -refreshToken -token")
+      .rejects(mockError);
+
+    try {
+      await getUserDetails("64b1f0ec7cbe1a345f44e7d");
+    } catch (error) {
+      expect(error.message).to.equal("User not found");
+      expect(error.status).to.equal(404);
+    }
+  });
+
   it("should login user and return user details with correct email and password", async () => {
     const mockUserData = {
       _id: "64b1f0ec7cbe1a345f44e7d3",
@@ -61,6 +112,7 @@ describe("user Service", () => {
       validatePassword: sinon.stub().resolves(true),
       save: sinon.stub().resolves(true),
     };
+
     sinon.stub(User, "findOne").resolves(mockUserData);
 
     const result = await loginUser("john.doe@example.com", "password13");
