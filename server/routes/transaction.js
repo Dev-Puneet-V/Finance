@@ -2,7 +2,10 @@ import express from "express";
 import { validationResult } from "express-validator";
 import { validateTransaction } from "../utils/validation.js";
 import { isUserLoggedIn } from "../utils/middlewares.js";
-import { createNewTransation } from "../services/transaction.js";
+import {
+  createNewTransation,
+  getTransactionDetails,
+} from "../services/transaction.js";
 import { errorMessages } from "../utils/constants.js";
 const router = express.Router();
 
@@ -38,7 +41,29 @@ router.post("/", validateTransaction, isUserLoggedIn, async (req, res) => {
 
 router.delete("/", (req, res) => {});
 
-router.get("/:id", (req, res) => {});
+router.get("/:id", isUserLoggedIn, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = req.user;
+    if (!id || !id?.trim()) {
+      const error = new Error("Transaction Id is required");
+      error.status = 400;
+      throw error;
+    }
+    const transactionDetails = await getTransactionDetails(id, user?._id);
+    res.status(200).json({
+      message: "Transaction details successfully fetched",
+      data: transactionDetails,
+    });
+  } catch (error) {
+    res.status(error.status || 500).json({
+      message:
+        errorMessages[error.code] ||
+        error.message ||
+        "Error fetching transaction details",
+    });
+  }
+});
 
 router.get("/history", (req, res) => {});
 

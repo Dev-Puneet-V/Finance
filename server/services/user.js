@@ -58,10 +58,10 @@ const loginUser = async (email, inputPassword) => {
       current: Date.now(),
     };
     user.token = jwt.sign(payload, process.env.TOKEN_SECRET, {
-      expiresIn: "10s",
+      expiresIn: "1d",
     });
     user.refreshToken = jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET, {
-      expiresIn: "30s",
+      expiresIn: "7d",
     });
 
     await user.save();
@@ -96,10 +96,10 @@ const refreshAccessToken = async (refreshToken) => {
       current: Date.now(),
     };
     user.token = jwt.sign(payload, process.env.TOKEN_SECRET, {
-      expiresIn: "10s",
+      expiresIn: "1d",
     });
     user.refreshToken = jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET, {
-      expiresIn: "30s",
+      expiresIn: "7d",
     });
     return {
       id: user._id,

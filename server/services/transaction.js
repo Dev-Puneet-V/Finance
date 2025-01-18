@@ -52,26 +52,29 @@ const createNewTransation = async (userId, amount, category, description) => {
 //   }
 // };
 
-// const getTransactionDetails = async (id) => {
-//   try {
-//     const transaction = await Transaction.findById(id);
-//     if (!transaction) {
-//       const error = new Error("No transaction found");
-//       error.status = 404;
-//       throw error;
-//     }
-//     const { _id, amount, description, category, createdAt } = transaction;
-//     return {
-//       id: _id,
-//       amount,
-//       description,
-//       category,
-//       createdAt,
-//     };
-//   } catch (error) {
-//     throw error;
-//   }
-// };
+const getTransactionDetails = async (id, userId) => {
+  try {
+    const transaction = await Transaction.findOne({
+      _id: new mongoose.Types.ObjectId(id),
+      user: userId,
+    });
+    if (!transaction) {
+      const error = new Error("No transaction found");
+      error.status = 404;
+      throw error;
+    }
+    const { _id, amount, description, category, createdAt } = transaction;
+    return {
+      id: _id,
+      amount,
+      description,
+      category,
+      createdAt,
+    };
+  } catch (error) {
+    throw error;
+  }
+};
 
 // const getTransactionHistory = (email) => {
 //   try {
@@ -83,6 +86,6 @@ const createNewTransation = async (userId, amount, category, description) => {
 export {
   createNewTransation,
   //   deleteTransaction,
-  //   getTransactionDetails,
+  getTransactionDetails,
   //   getTransactionHistory,
 };

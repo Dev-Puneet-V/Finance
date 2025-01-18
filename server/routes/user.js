@@ -56,7 +56,7 @@ router.post("/login", async (req, res) => {
       httpOnly: true, // Prevent client-side JavaScript access
       secure: process.env.NODE_ENV === "production", // Ensure HTTPS in production
       sameSite: "strict", // Protect against CSRF
-      maxAge: 15 * 60 * 1000,
+      maxAge: 24 * 60 * 60 * 1000,
     });
 
     res.cookie("refreshToken", userDetails.refreshToken, {
@@ -91,7 +91,7 @@ router.post("/refresh-token", async (req, res) => {
       httpOnly: true, // Prevent client-side JavaScript access
       secure: process.env.NODE_ENV === "production", // Ensure HTTPS in production
       sameSite: "strict", // Protect against CSRF
-      maxAge: 15 * 60 * 1000,
+      maxAge: 24 * 60 * 60 * 1000,
     });
 
     res.cookie("refreshToken", userDetails.refreshToken, {

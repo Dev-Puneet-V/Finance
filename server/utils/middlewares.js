@@ -15,6 +15,7 @@ const isUserLoggedIn = (req, res, next) => {
     req.user = decoded;
     next();
   } catch (error) {
+    console.log(error);
     res.status(error.status || 500).json({
       error: errorMessages[error.code] || "Unauthorized",
     });
