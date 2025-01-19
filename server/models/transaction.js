@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+const opts = { toJSON: { virtuals: true } };
 const transactionSchema = mongoose.Schema(
   {
     user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
@@ -28,9 +28,20 @@ const transactionSchema = mongoose.Schema(
   },
   {
     timestamps: true,
+    toJSON: { virtuals: true },
   }
 );
 
 transactionSchema.index({ user: 1 });
+
+transactionSchema.virtual("isCredit").get(function () {
+  return this.category === "credit";
+});
+
+transactionSchema.virtual("formattedDate").get(function () {
+  return this.date.toDateString();
+});
+
+// .lean({ virtuals: true })
 
 export default mongoose.model("Transaction", transactionSchema);

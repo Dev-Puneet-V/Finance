@@ -6,9 +6,44 @@ import {
   createNewTransation,
   deleteTransaction,
   getTransactionDetails,
+  getTransactionHistory,
 } from "../services/transaction.js";
 import { errorMessages } from "../utils/constants.js";
 const router = express.Router();
+
+router.get("/history", isUserLoggedIn, async (req, res) => {
+  const {
+    category,
+    maxAmount,
+    minAmount,
+    startDate,
+    endDate,
+    sortAmountBy,
+    sortDateBy,
+  } = req.body;
+  const { pageNumber, dataPerPage } = req.query;
+  const filters = {
+    category,
+    maxAmount,
+    minAmount,
+    startDate,
+    endDate,
+  };
+  filters.sort = {
+    amount: sortAmountBy === "desc" ? -1 : 1,
+    createdAt: sortDateBy === "desc" ? -1 : 1,
+  };
+  const result = await getTransactionHistory(
+    req.user?._id,
+    dataPerPage,
+    pageNumber,
+    filters
+  );
+  res.status(200).json({
+    message: "History successfully fetched",
+    data: result,
+  });
+});
 
 router.post("/", validateTransaction, isUserLoggedIn, async (req, res) => {
   try {
@@ -86,7 +121,5 @@ router.get("/:id", isUserLoggedIn, async (req, res) => {
     });
   }
 });
-
-router.get("/history", (req, res) => {});
 
 export default router;

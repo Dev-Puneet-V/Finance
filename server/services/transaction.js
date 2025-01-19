@@ -66,29 +66,71 @@ const getTransactionDetails = async (id, userId) => {
       error.status = 404;
       throw error;
     }
-    const { _id, amount, description, category, createdAt } = transaction;
+    //toJSON used for accessing the virtuals
+    const { _id, amount, description, category, createdAt, formattedDate } =
+      transaction.toJSON();
     return {
       id: _id,
       amount,
       description,
       category,
       createdAt,
+      formattedDate,
     };
   } catch (error) {
     throw error;
   }
 };
 
-// const getTransactionHistory = (userId) => {
-//   try {
-//   } catch (error) {
-//     throw error;
-//   }
-// };
+const getTransactionHistory = async (
+  userId,
+  dataPerPage,
+  pageNumber,
+  filters
+) => {
+  try {
+    const { category, maxAmount, minAmount, startDate, endDate, sort } =
+      filters;
+    const matchQuery = {
+      user: new mongoose.Types.ObjectId(userId),
+    };
+
+    if (category) {
+      matchQuery.category = category;
+    }
+
+    if (minAmount || maxAmount) {
+      matchQuery.amount = {};
+      if (minAmount) matchQuery.amount.$gte = +minAmount;
+      if (maxAmount) matchQuery.amount.$lte = +maxAmount;
+    }
+
+    if (startDate || endDate) {
+      matchQuery.createdAt = {};
+      if (startDate) matchQuery.createdAt.$gte = new Date(startDate);
+      if (endDate) matchQuery.createdAt.$lte = new Date(endDate);
+    }
+
+    const history = await Transaction.aggregate([
+      {
+        $match: matchQuery,
+      },
+      {
+        $sort: sort,
+      },
+    ])
+      .skip((+pageNumber - 1) * +dataPerPage)
+      .limit(+dataPerPage);
+    console.log(history);
+    return history;
+  } catch (error) {
+    throw error;
+  }
+};
 
 export {
   createNewTransation,
   deleteTransaction,
   getTransactionDetails,
-  //   getTransactionHistory,
+  getTransactionHistory,
 };
