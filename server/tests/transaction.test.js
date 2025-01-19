@@ -3,6 +3,7 @@ import Transaction from "../models/transaction.js";
 import { it, jest } from "@jest/globals";
 import {
   createNewTransation,
+  deleteTransaction,
   getTransactionDetails,
 } from "../services/transaction.js";
 import { getUserDetails } from "../services/user.js";
@@ -140,5 +141,25 @@ describe("Transaction Service", () => {
       _id: new mongoose.Types.ObjectId(id),
       user: userId,
     });
+  });
+
+  it("should successfully execute findOneDelete", async () => {
+    const id = "64b1f0ec7cbe1a345f44e7d3";
+    const userId = "64b1f0ec7cbe1a345f44e7d4";
+    const mockTransaction = {};
+    Transaction.findOneAndDelete.mockResolvedValue(mockTransaction);
+    await deleteTransaction(id, userId);
+    expect(Transaction.findOneAndDelete).toHaveBeenCalled();
+  });
+
+  it("should successfully execute findOneDelete", async () => {
+    const id = "64b1f0ec7cbe1a345f44e7d3";
+    const userId = "64b1f0ec7cbe1a345f44e7d4";
+    const mockError = new Error("Database error");
+      Transaction.findOneAndDelete.mockRejectedValue(mockError);
+      await expect(deleteTransaction(id, userId)).rejects.toThrow(
+        "Database error"
+      );
+    expect(Transaction.findOneAndDelete).toHaveBeenCalled();
   });
 });

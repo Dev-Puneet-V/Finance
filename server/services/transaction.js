@@ -36,21 +36,24 @@ const createNewTransation = async (userId, amount, category, description) => {
   }
 };
 
-// const deleteTransaction = async (id) => {
-//   try {
-//     const transaction = await Transaction.findByIdAndDelete(id);
-//     if (!transaction) {
-//       const error = new Error("No transaction found");
-//       error.status = 404;
-//       throw error;
-//     }
-//     return {
-//       success: true,
-//     };
-//   } catch (error) {
-//     throw error;
-//   }
-// };
+const deleteTransaction = async (id, userId) => {
+  try {
+    const transaction = await Transaction.findOneAndDelete({
+      _id: new mongoose.Types.ObjectId(id),
+      user: userId,
+    });
+    if (!transaction) {
+      const error = new Error("No transaction found");
+      error.status = 404;
+      throw error;
+    }
+    return {
+      success: true,
+    };
+  } catch (error) {
+    throw error;
+  }
+};
 
 const getTransactionDetails = async (id, userId) => {
   try {
@@ -76,7 +79,7 @@ const getTransactionDetails = async (id, userId) => {
   }
 };
 
-// const getTransactionHistory = (email) => {
+// const getTransactionHistory = (userId) => {
 //   try {
 //   } catch (error) {
 //     throw error;
@@ -85,7 +88,7 @@ const getTransactionDetails = async (id, userId) => {
 
 export {
   createNewTransation,
-  //   deleteTransaction,
+  deleteTransaction,
   getTransactionDetails,
   //   getTransactionHistory,
 };
