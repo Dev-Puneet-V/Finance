@@ -5,6 +5,7 @@ import {
   createNewTransation,
   deleteTransaction,
   getTransactionDetails,
+  getTransactionHistory,
 } from "../services/transaction.js";
 import { getUserDetails } from "../services/user.js";
 
@@ -85,13 +86,15 @@ describe("Transaction Service", () => {
   it("should fetch transaction details with correct id", async () => {
     const id = "64b1f0ec7cbe1a345f44e7d3";
     const userId = "64b1f0ec7cbe1a345f44e7d4";
-
-    const mockTransaction = {
+    const mockTransactionData = {
       _id: new mongoose.Types.ObjectId(id),
       amount: 100,
       description: "Groceries",
       category: "Food",
       createdAt: new Date(),
+    };
+    const mockTransaction = {
+      toJSON: jest.fn().mockResolvedValue(mockTransactionData),
     };
 
     Transaction.findOne.mockResolvedValue(mockTransaction);
@@ -156,10 +159,86 @@ describe("Transaction Service", () => {
     const id = "64b1f0ec7cbe1a345f44e7d3";
     const userId = "64b1f0ec7cbe1a345f44e7d4";
     const mockError = new Error("Database error");
-      Transaction.findOneAndDelete.mockRejectedValue(mockError);
-      await expect(deleteTransaction(id, userId)).rejects.toThrow(
-        "Database error"
-      );
+    Transaction.findOneAndDelete.mockRejectedValue(mockError);
+    await expect(deleteTransaction(id, userId)).rejects.toThrow(
+      "Database error"
+    );
     expect(Transaction.findOneAndDelete).toHaveBeenCalled();
+  });
+
+  it("should construct the correct pipeline with all filters", async () => {
+    const userId = "64c72b89e7d1f839a9e8f12d";
+    const dataPerPage = 10;
+    const pageNumber = 2;
+    const filters = {
+      category: "Food",
+      maxAmount: 500,
+      minAmount: 100,
+      startDate: "2025-01-01",
+      endDate: "2025-01-31",
+      sort: { createdAt: -1 },
+    };
+    const searchQuery = "groceries";
+
+    const mockResult = [{ id: "1", description: "Groceris" }];
+    Transaction.aggregate.mockResolvedValue(mockResult);
+    const result = await getTransactionHistory(
+      userId,
+      dataPerPage,
+      pageNumber,
+      filters,
+      searchQuery
+    );
+
+    const expectedPipeline = [
+      {
+        $search: {
+          text: {
+            query: "groceries",
+            path: "description",
+            fuzzy: { maxEdits: 2 },
+          },
+        },
+      },
+      {
+        $match: {
+          user: new mongoose.Types.ObjectId(userId),
+          category: "Food",
+          amount: { $gte: 100, $lte: 500 },
+          createdAt: {
+            $gte: new Date("2025-01-01"),
+            $lte: new Date("2025-01-31"),
+          },
+        },
+      },
+      { $sort: { createdAt: -1 } },
+      { $skip: 10 },
+      { $limit: 10 },
+    ];
+    expect(Transaction.aggregate).toHaveBeenCalledWith(expectedPipeline);
+    expect(result).toEqual(mockResult);
+  });
+
+  it("should throw an error if Transaction.aggregate fails", async () => {
+    // Arrange
+    const userId = "64c72b89e7d1f839a9e8f12d";
+    const dataPerPage = 5;
+    const pageNumber = 1;
+    const filters = {};
+    const searchQuery = "";
+    const error = new Error("Database error");
+
+    Transaction.aggregate.mockRejectedValue(error);
+
+    await expect(
+      getTransactionHistory(
+        userId,
+        dataPerPage,
+        pageNumber,
+        filters,
+        searchQuery
+      )
+    ).rejects.toThrow("Database error");
+    expect(Transaction.aggregate).toHaveBeenCalled();
   });
 });
