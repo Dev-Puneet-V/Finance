@@ -86,42 +86,48 @@ const getTransactionHistory = async (
   userId,
   dataPerPage,
   pageNumber,
-  filters
+  filters,
+  searchQuery
 ) => {
   try {
-    const { category, maxAmount, minAmount, startDate, endDate, sort } =
-      filters;
-    const matchQuery = {
-      user: new mongoose.Types.ObjectId(userId),
-    };
+    const { category, maxAmount, minAmount, startDate, endDate } = filters;
 
-    if (category) {
-      matchQuery.category = category;
+    const pipeline = [];
+    if (searchQuery?.trim()) {
+      pipeline.push({
+        $search: {
+          text: {
+            query: searchQuery.trim(),
+            path: "description",
+            fuzzy: { maxEdits: 2 },
+          },
+        },
+      });
     }
 
+    const matchQuery = { user: new mongoose.Types.ObjectId(userId) };
+    if (category?.trim()) matchQuery.category = category;
     if (minAmount || maxAmount) {
       matchQuery.amount = {};
       if (minAmount) matchQuery.amount.$gte = +minAmount;
       if (maxAmount) matchQuery.amount.$lte = +maxAmount;
     }
-
     if (startDate || endDate) {
       matchQuery.createdAt = {};
       if (startDate) matchQuery.createdAt.$gte = new Date(startDate);
       if (endDate) matchQuery.createdAt.$lte = new Date(endDate);
     }
+    pipeline.push({ $match: matchQuery });
+    if (filters?.sort) {
+      pipeline.push({ $sort: filters?.sort });
+    }
 
-    const history = await Transaction.aggregate([
-      {
-        $match: matchQuery,
-      },
-      {
-        $sort: sort,
-      },
-    ])
-      .skip((+pageNumber - 1) * +dataPerPage)
-      .limit(+dataPerPage);
-    console.log(history);
+    pipeline.push(
+      { $skip: (+pageNumber - 1) * +dataPerPage },
+      { $limit: +dataPerPage }
+    );
+
+    const history = await Transaction.aggregate(pipeline);
     return history;
   } catch (error) {
     throw error;

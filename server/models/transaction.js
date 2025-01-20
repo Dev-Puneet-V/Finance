@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-const opts = { toJSON: { virtuals: true } };
 const transactionSchema = mongoose.Schema(
   {
     user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },

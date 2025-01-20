@@ -12,37 +12,47 @@ import { errorMessages } from "../utils/constants.js";
 const router = express.Router();
 
 router.get("/history", isUserLoggedIn, async (req, res) => {
-  const {
-    category,
-    maxAmount,
-    minAmount,
-    startDate,
-    endDate,
-    sortAmountBy,
-    sortDateBy,
-  } = req.body;
-  const { pageNumber, dataPerPage } = req.query;
-  const filters = {
-    category,
-    maxAmount,
-    minAmount,
-    startDate,
-    endDate,
-  };
-  filters.sort = {
-    amount: sortAmountBy === "desc" ? -1 : 1,
-    createdAt: sortDateBy === "desc" ? -1 : 1,
-  };
-  const result = await getTransactionHistory(
-    req.user?._id,
-    dataPerPage,
-    pageNumber,
-    filters
-  );
-  res.status(200).json({
-    message: "History successfully fetched",
-    data: result,
-  });
+  try {
+    const {
+      category,
+      maxAmount,
+      minAmount,
+      startDate,
+      endDate,
+      sortAmountBy,
+      sortDateBy,
+    } = req.body;
+    const { pageNumber, dataPerPage, searchQuery } = req.query;
+    const filters = {
+      category,
+      maxAmount,
+      minAmount,
+      startDate,
+      endDate,
+    };
+    filters.sort = {
+      amount: sortAmountBy === "desc" ? -1 : 1,
+      createdAt: sortDateBy === "desc" ? -1 : 1,
+    };
+    const result = await getTransactionHistory(
+      req.user?._id,
+      dataPerPage,
+      pageNumber,
+      filters,
+      searchQuery
+    );
+    res.status(200).json({
+      message: "History successfully fetched",
+      data: result,
+    });
+  } catch (error) {
+    res.status(error.status || 500).json({
+      message:
+        errorMessages[error.code] ||
+        error.message ||
+        "Error fetching transactions history",
+    });
+  }
 });
 
 router.post("/", validateTransaction, isUserLoggedIn, async (req, res) => {
