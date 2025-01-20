@@ -85,7 +85,7 @@ router.post("/", validateTransaction, isUserLoggedIn, async (req, res) => {
   }
 });
 
-router.delete("/", isUserLoggedIn, async (req, res) => {
+router.delete("/:id", isUserLoggedIn, async (req, res) => {
   try {
     const { id } = req.params;
     const user = req.user;
@@ -94,7 +94,7 @@ router.delete("/", isUserLoggedIn, async (req, res) => {
       error.status = 400;
       throw error;
     }
-    await deleteTransaction(id, user?.id);
+    await deleteTransaction(id, user?._id);
     res.status(200).json({
       message: id + " transaction successfully deleted",
     });

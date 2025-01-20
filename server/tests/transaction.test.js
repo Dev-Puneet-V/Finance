@@ -220,7 +220,6 @@ describe("Transaction Service", () => {
   });
 
   it("should throw an error if Transaction.aggregate fails", async () => {
-    // Arrange
     const userId = "64c72b89e7d1f839a9e8f12d";
     const dataPerPage = 5;
     const pageNumber = 1;
@@ -240,5 +239,53 @@ describe("Transaction Service", () => {
       )
     ).rejects.toThrow("Database error");
     expect(Transaction.aggregate).toHaveBeenCalled();
+  });
+    
+  it("should delete the transaction successfully", async () => {
+    const id = "64c72b89e7d1f839a9e8f12d";
+    const userId = "user123";
+    const mockTransaction = { _id: id, user: userId, amount: 100 };
+
+    Transaction.findOneAndDelete.mockResolvedValue(mockTransaction);
+
+    const result = await deleteTransaction(id, userId);
+
+    expect(Transaction.findOneAndDelete).toHaveBeenCalledWith({
+      _id: new mongoose.Types.ObjectId(id),
+      user: userId,
+    });
+    expect(result).toEqual({ success: true });
+  });
+
+  it("should throw an error if no transaction is found", async () => {
+    // Arrange
+    const id = "64c72b89e7d1f839a9e8f12d";
+    const userId = "user123";
+
+    Transaction.findOneAndDelete.mockResolvedValue(null);
+
+    await expect(deleteTransaction(id, userId)).rejects.toThrow(
+      "No transaction found"
+    );
+    expect(Transaction.findOneAndDelete).toHaveBeenCalledWith({
+      _id: new mongoose.Types.ObjectId(id),
+      user: userId,
+    });
+  });
+
+  it("should throw an error if findOneAndDelete fails", async () => {
+    const id = "64c72b89e7d1f839a9e8f12d";
+    const userId = "user123";
+    const error = new Error("Database error");
+
+    Transaction.findOneAndDelete.mockRejectedValue(error);
+
+    await expect(deleteTransaction(id, userId)).rejects.toThrow(
+      "Database error"
+    );
+    expect(Transaction.findOneAndDelete).toHaveBeenCalledWith({
+      _id: new mongoose.Types.ObjectId(id),
+      user: userId,
+    });
   });
 });
