@@ -54,15 +54,15 @@ router.post("/login", async (req, res) => {
     const userDetails = await loginUser(email, password);
     res.cookie("token", userDetails.token, {
       httpOnly: true, // Prevent client-side JavaScript access
-      secure: process.env.NODE_ENV === "production", // Ensure HTTPS in production
-      sameSite: "strict", // Protect against CSRF
+      // secure: process.env.NODE_ENV === "production", // Ensure HTTPS in production
+      // sameSite: "none", // Protect against CSRF
       maxAge: 24 * 60 * 60 * 1000,
     });
 
     res.cookie("refreshToken", userDetails.refreshToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      // secure: process.env.NODE_ENV === "production",
+      // sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
     res.status(200).json({
@@ -89,15 +89,15 @@ router.post("/refresh-token", async (req, res) => {
     const userDetails = await refreshAccessToken(refreshToken);
     res.cookie("token", userDetails.token, {
       httpOnly: true, // Prevent client-side JavaScript access
-      secure: process.env.NODE_ENV === "production", // Ensure HTTPS in production
-      sameSite: "strict", // Protect against CSRF
+      // secure: process.env.NODE_ENV === "production", // Ensure HTTPS in production
+      // sameSite: "none", // Protect against CSRF
       maxAge: 24 * 60 * 60 * 1000,
     });
 
     res.cookie("refreshToken", userDetails.refreshToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      // secure: process.env.NODE_ENV === "production",
+      // sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
     res.status(200).json({

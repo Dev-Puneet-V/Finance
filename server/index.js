@@ -11,7 +11,8 @@ const PORT = process.env.PORT || 3000;
 app.use(cookieParser());
 dbConfig();
 const corsOptions = {
-  origin: "*", // Allow only this origin
+  origin: "http://localhost:5173",
+  credentials: true,
 };
 
 app.use(cors(corsOptions));

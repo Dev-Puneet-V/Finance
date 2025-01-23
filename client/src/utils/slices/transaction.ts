@@ -7,7 +7,7 @@ export const getTransactionHistory = createAsyncThunk(
     try {
       const { page, limit } = data;
       const response = await axios.get(
-        `/api/transaction/history?pageNumber=${page}&dataPerPage=${limit}`,
+        `http://localhost:3000/api/transaction/history?pageNumber=${page}&dataPerPage=${limit}`,
         {
           withCredentials: true,
         }
@@ -25,12 +25,16 @@ export const createTransaction = createAsyncThunk(
   "tranaction/getHistory",
   async (data, thunkAPI) => {
     try {
-      const response = await axios.post("/api/transaction", data, {
-        withCredentials: true,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await axios.post(
+        "http://localhost:3000/api/transaction",
+        data,
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       return response.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(

@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { NewUser, User, UserState } from "../types";
-
 const initialState: UserState = {
   name: "",
   email: "",
@@ -14,7 +13,10 @@ export const signUpUser = createAsyncThunk(
   "user/signUp",
   async (userData: NewUser, thunkAPI) => {
     try {
-      const response = await axios.post("/api/user/signup", userData);
+      const response = await axios.post(
+        "http://localhost:3000/api/user/signup",
+        userData
+      );
       return response.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(
@@ -28,7 +30,13 @@ export const loginUser = createAsyncThunk(
   "user/login",
   async (userData: User, thunkAPI) => {
     try {
-      const response = await axios.post("/api/user/login", userData);
+      const response = await axios.post(
+        "http://localhost:3000/api/user/login",
+        userData,
+        {
+          withCredentials: true,
+        }
+      );
       return response.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(

@@ -258,7 +258,6 @@ describe("Transaction Service", () => {
   });
 
   it("should throw an error if no transaction is found", async () => {
-    // Arrange
     const id = "64c72b89e7d1f839a9e8f12d";
     const userId = "user123";
 
