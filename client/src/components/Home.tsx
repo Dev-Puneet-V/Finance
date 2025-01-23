@@ -1,5 +1,11 @@
+import TransactionHistory from "./TransactionHistory";
+
 const Home = () => {
-  return <div></div>;
+  return (
+    <div>
+      <TransactionHistory />
+    </div>
+  );
 };
 
 export default Home;

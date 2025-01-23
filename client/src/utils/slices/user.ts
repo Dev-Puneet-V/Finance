@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { NewUser, User, UserState } from "../types";
 
-
 const initialState: UserState = {
   name: "",
   email: "",
@@ -13,15 +12,9 @@ const initialState: UserState = {
 
 export const signUpUser = createAsyncThunk(
   "user/signUp",
-  async (
-    userData: NewUser,
-    thunkAPI
-  ) => {
+  async (userData: NewUser, thunkAPI) => {
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/user/signup",
-        userData
-      );
+      const response = await axios.post("/api/user/signup", userData);
       return response.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(
@@ -35,10 +28,7 @@ export const loginUser = createAsyncThunk(
   "user/login",
   async (userData: User, thunkAPI) => {
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/user/login",
-        userData
-      );
+      const response = await axios.post("/api/user/login", userData);
       return response.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(
@@ -49,17 +39,16 @@ export const loginUser = createAsyncThunk(
 );
 
 const userSlice = createSlice({
-    name: "user",
-    initialState,
-    reducers: {
-
-    },
-    extraReducers: (builder) => {
-        builder.addCase(signUpUser.pending, (state) => {
+  name: "user",
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(signUpUser.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(signUpUser.fulfilled, (state, action: PayloadAction<{ message: string }>) => {
+      .addCase(signUpUser.fulfilled, (state) => {
         state.loading = false;
         state.error = null;
       })
@@ -71,22 +60,23 @@ const userSlice = createSlice({
         state.loading = true;
         state.error = null;
       })
-      .addCase(loginUser.fulfilled, (state, action: PayloadAction<{ name: string; email: string }>) => {
-        state.loading = false;
-        state.name = action.payload.name;
-        state.email = action.payload.email;
-        state.isVerified = true;
-        state.error = null;
-      })
+      .addCase(
+        loginUser.fulfilled,
+        (state, action: PayloadAction<{ name: string; email: string }>) => {
+          state.loading = false;
+          state.name = action.payload.name;
+          state.email = action.payload.email;
+          state.isVerified = true;
+          state.error = null;
+        }
+      )
       .addCase(loginUser.rejected, (state, action: PayloadAction<any>) => {
         state.loading = false;
         state.error = action.payload;
       });
-    }
-})
+  },
+});
 
-
-
-export const { } = userSlice.actions;
+export const {} = userSlice.actions;
 
 export default userSlice.reducer;

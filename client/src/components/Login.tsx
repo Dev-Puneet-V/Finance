@@ -12,7 +12,7 @@ const Login: React.FC = () => {
   const [isSignUp, setIsSignUp] = useState<boolean>(true);
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
-  const { loading, error } = useSelector((state: RootState) => state.user);
+  const { loading } = useSelector((state: RootState) => state.user);
   const handleButtonClick = async (
     values: NewUser,
     setSubmitting: FormikHelpers<NewUser>["setSubmitting"]
