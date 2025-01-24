@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  RouterProvider,
-  createBrowserRouter,
-  RouteObject,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Dashboard from "../pages/Dashboard";
 import Transactions from "../pages/Transactions";
@@ -14,52 +10,29 @@ import Settings from "../pages/Settings";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 
-const Body: React.FC = () => {
-  const appRouter: RouteObject[] = [
-    {
-      path: "/",
-      element: <Login />,
-    },
-    {
-      path: "/home",
-      element: <Home />,
-      children: [
-        {
-          path: "dashboard",
-          element: <Dashboard />,
-        },
-        {
-          path: "transactions",
-          element: <Transactions />,
-        },
-        {
-          path: "analytics",
-          element: <Analytics />,
-        },
-        {
-          path: "ai-insights",
-          element: <AIInsights />,
-        },
-        {
-          path: "profile",
-          element: <Profile />,
-        },
-        {
-          path: "settings",
-          element: <Settings />,
-        },
-      ],
-    },
-  ];
+const routes = [
+  { path: "/", element: <Login /> },
+  {
+    path: "/home",
+    element: <Home />,
+    children: [
+      { path: "dashboard", element: <Dashboard /> },
+      { path: "transactions", element: <Transactions /> },
+      { path: "analytics", element: <Analytics /> },
+      { path: "ai-insights", element: <AIInsights /> },
+      { path: "profile", element: <Profile /> },
+      { path: "settings", element: <Settings /> },
+    ],
+  },
+];
 
-  const router = createBrowserRouter(appRouter);
+const router = createBrowserRouter(routes);
 
-  return (
-    <div>
-      <RouterProvider router={router} />
-      <ToastContainer />
-    </div>
-  );
-};
+const Body: React.FC = () => (
+  <div>
+    <RouterProvider router={router} />
+    <ToastContainer />
+  </div>
+);
 
 export default Body;

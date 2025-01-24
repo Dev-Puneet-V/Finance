@@ -1,32 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  HomeIcon,
-  CreditCardIcon,
-  ChartBarIcon,
-  LightBulbIcon,
-  UserIcon,
-  CogIcon,
   XMarkIcon,
   Bars3Icon,
 } from "@heroicons/react/24/outline";
 import Logo from "./Logo";
+import { SidebarProps } from "../utils/types";
 
-const Sidebar: React.FC = () => {
+const Sidebar: React.FC<SidebarProps> = ({ links }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = (): void => {
     setIsOpen((prevState) => !prevState);
   };
-
-  const links = [
-    { name: "Dashboard", icon: HomeIcon, href: "/home/dashboard" },
-    { name: "Transactions", icon: CreditCardIcon, href: "/home/transactions" },
-    { name: "Analytics", icon: ChartBarIcon, href: "/home/analytics" },
-    { name: "AI Insights", icon: LightBulbIcon, href: "/home/ai-insights" },
-    { name: "Profile", icon: UserIcon, href: "/home/profile" },
-    { name: "Settings", icon: CogIcon, href: "/home/settings" },
-  ];
 
   return (
     <div

@@ -15,4 +15,14 @@ interface UserState {
   error: string | null;
 }
 
-export type { User, NewUser, UserState };
+interface SidebarLink {
+  name: string;
+  icon: React.ElementType;
+  href: string;
+}
+
+interface SidebarProps {
+  links: SidebarLink[];
+}
+
+export type { User, NewUser, UserState, SidebarLink, SidebarProps };
