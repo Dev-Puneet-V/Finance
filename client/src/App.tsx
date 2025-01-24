@@ -1,4 +1,4 @@
-import Body from "./components/Body";
+import Body from "./layout/Body";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 
