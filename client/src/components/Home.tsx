@@ -1,9 +1,10 @@
+import Sidebar from "./Sidebar";
 import TransactionHistory from "./TransactionHistory";
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <div>
-      <TransactionHistory />
+      <Sidebar />
     </div>
   );
 };
