@@ -16,3 +16,15 @@ export const links: SidebarLink[] = [
   { name: "Profile", icon: UserIcon, href: "/home/profile" },
   { name: "Settings", icon: CogIcon, href: "/home/settings" },
 ];
+
+export const transactionTypeFilter = ["All", "Income", "Expense"];
+
+
+export const durationOptions = [
+    { label: "Past 24 Hours", value: "24h" },
+    { label: "Past Week", value: "7d" },
+    { label: "Past Month", value: "1m" },
+    { label: "Past 6 Months", value: "6m" },
+    { label: "Past Year", value: "1y" },
+    { label: "Custom Range", value: "custom" },
+]

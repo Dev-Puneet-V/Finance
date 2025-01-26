@@ -25,4 +25,44 @@ interface SidebarProps {
   links: SidebarLink[];
 }
 
-export type { User, NewUser, UserState, SidebarLink, SidebarProps };
+interface FilterButtonProps {
+  options: string[];
+  onChange?: (selectedIndex: number) => void;
+}
+
+interface SelectOption {
+  label: string;
+  value: string | number;
+}
+
+interface SelectProps {
+  options: SelectOption[];
+  placeholder?: string;
+  value?: SelectOption | null;
+  onChange: (selected: SelectOption) => void;
+}
+
+interface DurationType {
+  label: string;
+  value: string | number;
+}
+
+interface SearchProps {
+  placeholder?: string;
+}
+
+interface TableProps {}
+
+export type {
+  User,
+  NewUser,
+  UserState,
+  SidebarLink,
+  SidebarProps,
+  FilterButtonProps,
+  SelectOption,
+  SelectProps,
+  DurationType,
+  SearchProps,
+  TableProps,
+};
