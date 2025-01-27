@@ -4,8 +4,19 @@ import Table from "../components/Table";
 import transactionsData from "../utils/testingData/transactions.json";
 import { filterTransactions } from "../utils/filterTransaction";
 import { Filters } from "../utils/types";
+import { AppDispatch, RootState } from "../utils/store"; // Adjust the import path as needed
+import { getTransactionHistory } from "../utils/slices/transaction";
+import { useDispatch, useSelector } from "react-redux";
 
 const Transactions: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const {
+    transactions,
+    loading,
+    error,
+    currentPageNumber,
+    transactionCountPerPage,
+  } = useSelector((state: RootState) => state.transaction);
   const [filters, setFilters] = useState<Filters>({
     incomeType: 0,
     dateStart: null,
@@ -13,6 +24,22 @@ const Transactions: React.FC = () => {
     searchValue: "",
   });
 
+  useEffect(() => {
+    if (transactions.length === 0) {
+      dispatch(
+        getTransactionHistory({
+          page: currentPageNumber,
+          limit: transactionCountPerPage,
+        })
+      );
+    }
+  }, [
+    dispatch,
+    transactions.lengthdispatch,
+    transactions.length,
+    currentPageNumber,
+    transactionCountPerPage,
+  ]);
   const handleFilterChange = (newFilter: Partial<Filters>) => {
     setFilters((prevFilters) => ({
       ...prevFilters,
@@ -20,12 +47,15 @@ const Transactions: React.FC = () => {
     }));
   };
 
-  const filteredTransactions = filterTransactions(transactionsData, filters);
+  const filteredTransactions = filterTransactions(transactions, filters);
 
-  useEffect(() => {
-    console.log("Applied Filters:", filters);
-  }, [filters]);
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
   return (
     <div>
       <p className="border-b font-bold text-3xl mt-6 text-slate-600 pb-1">
@@ -37,9 +67,13 @@ const Transactions: React.FC = () => {
           onFilterChange={handleFilterChange}
         />
         <Table
-          columns={["amount", "type", "description", "date"]}
+          columns={["description", "date", "amount"]}
           data={filteredTransactions.map((transaction) => ({
-            ...transaction,
+            description: transaction.description,
+            date:
+              transaction.date.toString().split("T")[0] +
+              " " +
+              transaction.date.toString().split("T")[1].split(".")[0],
             amount:
               transaction.category === "credit" ? (
                 <div className="text-green-500">+ {transaction.amount}</div>
@@ -49,7 +83,7 @@ const Transactions: React.FC = () => {
           }))}
           currentPage={3}
           itemsPerPage={8}
-          totalItems={filteredTransactions.length}
+          totalItems={filteredTransactions?.length}
         />
       </div>
     </div>

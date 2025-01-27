@@ -16,7 +16,7 @@ const Table: React.FC<TableProps> = ({
 
   // Total number of pages
   const totalPages = Math.ceil(data.length / itemsPerPage);
-
+  console.log(filteredData.length, itemsPerPage)
   useEffect(() => {
     setFilteredData(() => {
       const startIndex = updatedCurrentPage * itemsPerPage;
@@ -43,7 +43,8 @@ const Table: React.FC<TableProps> = ({
 
   // Generate visible page numbers
   const getVisiblePages = () => {
-    const visiblePages: (number | string)[] = [];
+      const visiblePages: (number | string)[] = [];
+      
     const maxVisible = 7;
 
     if (totalPages <= maxVisible) {

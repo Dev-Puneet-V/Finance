@@ -46,7 +46,7 @@ export const createTransaction = createAsyncThunk(
 
 const initialState: any = {
   currentPageNumber: 1,
-  transactionCountPerPage: 10,
+  transactionCountPerPage: 20,
   totalPages: -1,
   transactions: [],
   loading: false,
