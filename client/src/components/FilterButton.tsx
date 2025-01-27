@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { FilterButtonProps } from "../utils/types";
 
-const FilterButton: React.FC<FilterButtonProps> = ({ options, onChange }) => {
+const FilterButton: React.FC<FilterButtonProps> = ({
+  options,
+  onChange
+}) => {
   const [activeElement, setActiveElement] = useState<number>(0);
 
   const handleClick = (index: number) => {

@@ -49,9 +49,16 @@ interface DurationType {
 
 interface SearchProps {
   placeholder?: string;
+  onInputChange?: (e: any) => void;
 }
 
-interface TableProps {}
+interface TableProps {
+  columns: string[];
+  data: any[];
+  itemsPerPage: number;
+  totalItems: number;
+  currentPage?: number;
+}
 
 export type {
   User,
