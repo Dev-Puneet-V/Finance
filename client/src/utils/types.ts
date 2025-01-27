@@ -60,6 +60,21 @@ interface TableProps {
   currentPage?: number;
 }
 
+export interface Transaction {
+  _id: string;
+  description: string;
+  amount: number;
+  date: string;
+  category: string | "credit" | "debit";
+}
+
+export interface Filters {
+  incomeType: number;
+  dateStart: string | null;
+  dateEnd: string | null;
+  searchValue: string;
+}
+
 export type {
   User,
   NewUser,

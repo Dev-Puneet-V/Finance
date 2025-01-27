@@ -3,38 +3,86 @@ import Search from "./Search";
 import FilterButton from "./FilterButton";
 import { durationOptions, transactionTypeFilter } from "../utils/constant";
 import Select from "./Select";
-import { DurationType } from "../utils/types";
+import { DurationType, Filters } from "../utils/types";
 
-const TransactionHeader: React.FC<any> = ({ filters, onFilterChange}) => {
+interface TransactionHeaderProps {
+  filters: Filters;
+  onFilterChange: (newFilter: Partial<Filters>) => void;
+}
+
+const TransactionHeader: React.FC<TransactionHeaderProps> = ({
+  filters,
+  onFilterChange,
+}) => {
   const [selectedOption, setSelectedOption] = useState<DurationType | null>(
     null
   );
 
   const handleSelectChange = (option: DurationType) => {
     setSelectedOption(option);
+
+    let dateStart: string | null = null;
+    let dateEnd: string | null = new Date().toISOString().split("T")[0]; // Default end date is today
+
+    switch (option.value) {
+      case "24h":
+        dateStart = new Date(Date.now() - 24 * 60 * 60 * 1000)
+          .toISOString()
+          .split("T")[0];
+        break;
+      case "7d":
+        dateStart = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
+          .toISOString()
+          .split("T")[0];
+        break;
+      case "1m":
+        dateStart = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
+          .toISOString()
+          .split("T")[0];
+        break;
+      case "6m":
+        dateStart = new Date(Date.now() - 6 * 30 * 24 * 60 * 60 * 1000)
+          .toISOString()
+          .split("T")[0];
+        break;
+      case "1y":
+        dateStart = new Date(Date.now() - 365 * 24 * 60 * 60 * 1000)
+          .toISOString()
+          .split("T")[0];
+        break;
+      case "custom":
+        // For custom, we don't set dateStart and dateEnd initially
+        dateStart = null;
+        dateEnd = null;
+        break;
+      default:
+        dateStart = null;
+        dateEnd = null;
+    }
+
     onFilterChange({
-      dateSelectionOption: option?.value,
+      dateStart,
+      dateEnd,
     });
   };
 
   const handleDateChange = (type: "start" | "end") => (value: string) => {
-    console.log(`${type} date changed:`, value);
     onFilterChange({
-      ["date" + type.charAt(0).toUpperCase() + type.slice(1)]: value,
+      [type === "start" ? "dateStart" : "dateEnd"]: value,
     });
   };
 
-  const handleSearchChange = (e: any) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onFilterChange({
-      searchValue: e?.target.value
+      searchValue: e.target.value,
     });
-  }
+  };
 
   const handleTypeChange = (value: number) => {
     onFilterChange({
-      incomeType : value
+      incomeType: value,
     });
-  }
+  };
 
   const renderCustomDateInputs = () => (
     <div className="mt-1 p-1 rounded-lg flex gap-2 justify-center items-center bg-gray-800">
@@ -54,8 +102,14 @@ const TransactionHeader: React.FC<any> = ({ filters, onFilterChange}) => {
   return (
     <div className="flex justify-between">
       <div className="flex items-center gap-8">
-        <Search placeholder="Search Transactions..." onInputChange={handleSearchChange} />
-        <FilterButton options={transactionTypeFilter} onChange={handleTypeChange} />
+        <Search
+          placeholder="Search Transactions..."
+          onInputChange={handleSearchChange}
+        />
+        <FilterButton
+          options={transactionTypeFilter}
+          onChange={handleTypeChange}
+        />
       </div>
 
       <div className="flex gap-4 items-center justify-center">
