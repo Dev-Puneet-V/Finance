@@ -71,8 +71,8 @@ export interface Transaction {
 
 export interface Filters {
   incomeType: number;
-  dateStart: string | null;
-  dateEnd: string | null;
+  dateStart: string | null | Date;
+  dateEnd: string | null | Date;
   searchValue: string;
 }
 
