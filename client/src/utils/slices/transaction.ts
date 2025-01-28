@@ -22,8 +22,8 @@ export const getTransactionHistory = createAsyncThunk(
 );
 
 export const createTransaction = createAsyncThunk(
-  "tranaction/getHistory",
-  async (data, thunkAPI) => {
+  "transaction/createTransaction",
+  async (data: any, thunkAPI) => {
     try {
       const response = await axios.post(
         "http://localhost:3000/api/transaction",
@@ -46,10 +46,10 @@ export const createTransaction = createAsyncThunk(
 
 const initialState: any = {
   currentPageNumber: 1,
-  transactionCountPerPage: 20,
+  transactionCountPerPage: 10000,
   totalPages: -1,
   transactions: [],
-  loading: false,
+  loading: null,
   error: null,
 };
 
@@ -63,17 +63,21 @@ const transactionSlice = createSlice({
     setTransactionCountPerPage: (state, action: PayloadAction<number>) => {
       state.transactionCountPerPage = action.payload;
     },
+    setInitState: (state) => {
+      state.loading = null;
+      state.error = null;
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(getTransactionHistory.pending, (state) => {
-        state.loading = true;
+        state.loading = "loading";
         state.error = null;
       })
       .addCase(
         getTransactionHistory.fulfilled,
         (state, action: PayloadAction<any>) => {
-          state.loading = false;
+          state.loading = null;
           state.error = null;
           state.transactions = [...state.transactions, ...action.payload];
         }
@@ -81,29 +85,30 @@ const transactionSlice = createSlice({
       .addCase(
         getTransactionHistory.rejected,
         (state, action: PayloadAction<any>) => {
-          state.loading = false;
+          state.loading = null;
           state.error = action.payload;
         }
       )
       .addCase(createTransaction.pending, (state) => {
-        state.loading = true;
+        state.loading = "loading";
         state.error = null;
       })
-      .addCase(createTransaction.fulfilled, (state) => {
-        state.loading = false;
+      .addCase(createTransaction.fulfilled, (state, action) => {
+        state.loading = "loaded";
         state.error = null;
+        state.transactions = [action.payload?.data, ...state.transactions];
       })
       .addCase(
         createTransaction.rejected,
         (state, action: PayloadAction<any>) => {
-          state.loading = false;
+          state.loading = null;
           state.error = action.payload;
         }
       );
   },
 });
 
-export const { setPageNumber, setTransactionCountPerPage } =
+export const { setPageNumber, setTransactionCountPerPage, setInitState } =
   transactionSlice.actions;
 
 export default transactionSlice.reducer;

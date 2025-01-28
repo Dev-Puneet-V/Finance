@@ -28,7 +28,7 @@ export const filterTransactions = (
       const transactionDate = new Date(transaction.date).getTime();
       const startDate = new Date(dateStart).getTime();
       const endDate = new Date(dateEnd).getTime();
-
+      // console.log(transactionDate, startDate, endDate);
       if (transactionDate < startDate || transactionDate > endDate) {
         return false;
       }

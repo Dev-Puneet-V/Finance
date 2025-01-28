@@ -11,6 +11,7 @@ interface UserState {
   name: string;
   email: string;
   isVerified: boolean;
+  recentTransactions: [];
   loading: boolean;
   error: string | null;
 }

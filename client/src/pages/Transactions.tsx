@@ -68,19 +68,23 @@ const Transactions: React.FC = () => {
         />
         <Table
           columns={["description", "date", "amount"]}
-          data={filteredTransactions.map((transaction) => ({
-            description: transaction.description,
-            date:
-              transaction.date.toString().split("T")[0] +
-              " " +
-              transaction.date.toString().split("T")[1].split(".")[0],
-            amount:
-              transaction.category === "credit" ? (
-                <div className="text-green-500">+ {transaction.amount}</div>
-              ) : (
-                <div className="text-red-500">- {transaction.amount}</div>
-              ),
-          }))}
+          data={filteredTransactions.
+            sort((a, b) => {
+              return new Date(b.date).getTime() - new Date(a.date).getTime();
+            })
+            .map((transaction) => ({
+              description: transaction.description,
+              date:
+                transaction.date.toString().split("T")[0] +
+                " " +
+                transaction.date.toString().split("T")[1].split(".")[0],
+              amount:
+                transaction.category === "credit" ? (
+                  <div className="text-green-500">+ {transaction.amount}</div>
+                ) : (
+                  <div className="text-red-500">- {transaction.amount}</div>
+                ),
+            }))}
           currentPage={3}
           itemsPerPage={8}
           totalItems={filteredTransactions?.length}

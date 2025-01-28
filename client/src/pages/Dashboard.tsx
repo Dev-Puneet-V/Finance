@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts"; // Chart library
 import { CircularProgressbar } from "react-circular-progressbar"; // Circular progress bar
+import Modal from "../components/Modal";
+import { CreateTransaction } from "../components/CreateTransaction";
 
 // Example data for charts and progress
 const data = [
@@ -11,12 +13,16 @@ const data = [
 ];
 
 const Dashboard: React.FC = () => {
+  const [transactionModalStatus, setTransactionModalStatus] = useState(false);
+  const handleCreateTransactionModal = () => {
+    setTransactionModalStatus(!transactionModalStatus);
+  }
   return (
     <div className="space-y-6">
       {/* Header Section */}
       <div className="flex justify-between items-center">
         <h2 className="text-3xl font-bold text-gray-800">Dashboard</h2>
-        <button className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-200">
+        <button className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-200" onClick={handleCreateTransactionModal}>
           Add Transaction
         </button>
       </div>
@@ -131,6 +137,10 @@ const Dashboard: React.FC = () => {
           <p className="text-sm text-gray-500 mt-1">$3,000 saved</p>
         </div>
       </div>
+      {/* <Modal isOpen={transactionModalStatus} onClose={handleCreateTransactionModal}>
+        <div>Hello</div>
+      </Modal> */}
+      {transactionModalStatus && <CreateTransaction onClose={handleCreateTransactionModal} />}
     </div>
   );
 };

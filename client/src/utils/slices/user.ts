@@ -7,6 +7,7 @@ const initialState: UserState = {
   isVerified: false,
   loading: false,
   error: null,
+  recentTransactions: []
 };
 
 export const signUpUser = createAsyncThunk(

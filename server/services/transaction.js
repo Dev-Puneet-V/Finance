@@ -21,13 +21,7 @@ const createNewTransation = async (userId, amount, category, description) => {
 
     await user.addTransactions(newTransaction[0]._id, session);
     await session.commitTransaction();
-    return {
-      id: newTransaction[0]._id,
-      amount: newTransaction[0].amount,
-      category: newTransaction[0].category,
-      description: newTransaction[0].amount,
-      createdAt: newTransaction[0].createdAt,
-    };
+    return newTransaction[0];
   } catch (error) {
     await session.abortTransaction();
     throw error;
@@ -118,9 +112,9 @@ const getTransactionHistory = async (
       if (endDate) matchQuery.createdAt.$lte = new Date(endDate);
     }
     pipeline.push({ $match: matchQuery });
-    if (filters?.sort) {
-      pipeline.push({ $sort: filters?.sort });
-    }
+    // if (filters?.sort) {
+    pipeline.push({ $sort: filters?.sort || -1 });
+    // }
 
     pipeline.push(
       { $skip: (+pageNumber - 1) * +dataPerPage },

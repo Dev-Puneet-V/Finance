@@ -21,34 +21,30 @@ const TransactionHeader: React.FC<TransactionHeaderProps> = ({
   const handleSelectChange = (option: DurationType) => {
     setSelectedOption(option);
 
-    let dateStart: string | null = null;
-    let dateEnd: string | null = new Date().toISOString().split("T")[0]; // Default end date is today
+    let dateStart: string | null | Date = null;
+    let dateEnd: string | null | Date = new Date(); // Default end date is today
 
     switch (option.value) {
       case "24h":
         dateStart = new Date(Date.now() - 24 * 60 * 60 * 1000)
-          .toISOString()
-          .split("T")[0];
+          
+        console.log(dateStart)
         break;
       case "7d":
         dateStart = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
-          .toISOString()
-          .split("T")[0];
+          
         break;
       case "1m":
         dateStart = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
-          .toISOString()
-          .split("T")[0];
+          
         break;
       case "6m":
         dateStart = new Date(Date.now() - 6 * 30 * 24 * 60 * 60 * 1000)
-          .toISOString()
-          .split("T")[0];
+         
         break;
       case "1y":
         dateStart = new Date(Date.now() - 365 * 24 * 60 * 60 * 1000)
-          .toISOString()
-          .split("T")[0];
+          
         break;
       case "custom":
         // For custom, we don't set dateStart and dateEnd initially
