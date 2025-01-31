@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
+import { calculateTotals } from "../helpers";
 
 export const getTransactionHistory = createAsyncThunk(
   "transaction/getHistory",
@@ -49,6 +50,10 @@ const initialState: any = {
   transactionCountPerPage: 10000,
   totalPages: -1,
   transactions: [],
+  lastThirtyDays: {
+    totalCredit: 0,
+    totalDebit: 0,
+  },
   loading: null,
   error: null,
 };
@@ -80,6 +85,14 @@ const transactionSlice = createSlice({
           state.loading = null;
           state.error = null;
           state.transactions = [...state.transactions, ...action.payload];
+          const { totalCredit, totalDebit } = calculateTotals([
+            ...state.transactions,
+            ...action.payload,
+          ]);
+          state.lastThirtyDays = {
+            totalCredit,
+            totalDebit,
+          };
         }
       )
       .addCase(
@@ -97,6 +110,16 @@ const transactionSlice = createSlice({
         state.loading = "loaded";
         state.error = null;
         state.transactions = [action.payload?.data, ...state.transactions];
+        state.lastThirtyDays = {
+          totalCredit:
+            action.payload?.data?.category === "credit"
+              ? state.lastThirtyDays?.totalCredit + action.payload?.data.amount
+              : state.lastThirtyDays?.totalCredit,
+          totalDebit:
+            action.payload?.data?.category === "debit"
+              ? state.lastThirtyDays?.totalDebit + action.payload?.data.amount
+              : state.lastThirtyDays?.totalDebit,
+        };
       })
       .addCase(
         createTransaction.rejected,
