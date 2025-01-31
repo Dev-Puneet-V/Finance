@@ -79,6 +79,7 @@ const TransactionHeader: React.FC<TransactionHeaderProps> = ({
       incomeType: value,
     });
   };
+  
 
   const renderCustomDateInputs = () => (
     <div className="mt-1 p-1 rounded-lg flex gap-2 justify-center items-center bg-gray-800">

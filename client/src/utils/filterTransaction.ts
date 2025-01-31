@@ -1,4 +1,3 @@
-// utils/filterTransactions.ts
 import { transactionTypeFilter } from "./constant";
 import { Transaction, Filters } from "./types";
 
@@ -9,7 +8,6 @@ export const filterTransactions = (
   const { incomeType, dateStart, dateEnd, searchValue } = filters;
 
   return transactions.filter((transaction) => {
-    // Filter by income type
     if (incomeType > 0) {
       const isIncome = transaction.category === "credit";
       const isExpense = transaction.category === "debit";
@@ -23,18 +21,15 @@ export const filterTransactions = (
       }
     }
 
-    // Filter by date range
     if (dateStart && dateEnd) {
       const transactionDate = new Date(transaction.date).getTime();
       const startDate = new Date(dateStart).getTime();
       const endDate = new Date(dateEnd).getTime();
-      // console.log(transactionDate, startDate, endDate);
       if (transactionDate < startDate || transactionDate > endDate) {
         return false;
       }
     }
 
-    // Filter by search value
     if (searchValue.trim().length >= 3) {
       const searchQuery = searchValue.trim().toLowerCase();
       if (!transaction.description.toLowerCase().includes(searchQuery)) {
@@ -45,3 +40,4 @@ export const filterTransactions = (
     return true;
   });
 };
+

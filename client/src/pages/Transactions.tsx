@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TransactionHeader from "../components/TransactionHeader";
 import Table from "../components/Table";
-import transactionsData from "../utils/testingData/transactions.json";
 import { filterTransactions } from "../utils/filterTransaction";
 import { Filters } from "../utils/types";
 import { AppDispatch, RootState } from "../utils/store"; // Adjust the import path as needed
@@ -61,6 +60,7 @@ const Transactions: React.FC = () => {
       <p className="border-b font-bold text-3xl mt-6 text-slate-600 pb-1">
         Transactions
       </p>
+
       <div className="mt-5">
         <TransactionHeader
           filters={filters}
@@ -68,8 +68,8 @@ const Transactions: React.FC = () => {
         />
         <Table
           columns={["description", "date", "amount"]}
-          data={filteredTransactions.
-            sort((a, b) => {
+          data={filteredTransactions
+            .sort((a, b) => {
               return new Date(b.date).getTime() - new Date(a.date).getTime();
             })
             .map((transaction) => ({

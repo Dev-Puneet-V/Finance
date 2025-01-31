@@ -5,15 +5,17 @@ import { CirclesWithBar } from "react-loader-spinner";
 import { useDispatch, useSelector } from "react-redux";
 import { createTransaction, setInitState } from "../utils/slices/transaction";
 import { AppDispatch, RootState } from "../utils/store";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { toast } from "react-toastify";
 interface CreateTranactionProps {
   onClose: () => void;
 }
-const CreateTransaction: React.FC<CreateTranactionProps> = ({onClose}) => {
+const CreateTransaction: React.FC<CreateTranactionProps> = ({ onClose }) => {
   const dispatch = useDispatch<AppDispatch>();
-  const { loading, error } = useSelector((state: RootState) => state.transaction);
-  
+  const { loading, error } = useSelector(
+    (state: RootState) => state.transaction
+  );
+
   const formik = useFormik({
     initialValues: {
       amount: "",
@@ -35,11 +37,11 @@ const CreateTransaction: React.FC<CreateTranactionProps> = ({onClose}) => {
   });
   useEffect(() => {
     if (loading === "loaded") {
-      toast.success(`Trasaction created successfully😊`)
-      dispatch(setInitState())
+      toast.success(`Trasaction created successfully😊`);
+      dispatch(setInitState());
       onClose();
     } else if (error) {
-      toast.error("Transaction creation failed🥲")
+      toast.error("Transaction creation failed🥲");
       dispatch(setInitState());
     }
   }, [loading]);
