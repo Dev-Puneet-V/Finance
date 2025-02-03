@@ -11,6 +11,9 @@ const CashFlowSummary: React.FC = () => {
   const data = formatPastOneYearTransactions(transactions);
   return (
     <div className="bg-gray-800 p-6 rounded-lg text-white shadow-lg">
+      <p className="text-lg font-semibold mb-5">
+        Summary of the past year (Monthly)
+      </p>
       <LineChart width={500} height={300} data={data}>
         <XAxis dataKey="name" />
         <YAxis dataKey="amt" />

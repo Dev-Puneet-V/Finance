@@ -56,6 +56,7 @@ const groupedByMonth = filteredTransactions.reduce((acc, transaction) => {
   const month = new Date(transaction.date).toLocaleString("default", {
     month: "short",
   });
+  
   if (!acc[month]) {
     acc[month] = { name: month, credit: 0, debit: 0, amt: 0 };
   }
