@@ -1,0 +1,1675 @@
+[
+  {
+    "_id": "B5be23BDB86f2ce9AADFA781",
+    "amount": 556,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-10T10:42:14.282901"
+  },
+  {
+    "_id": "B5C9e40deed8bE205DE2daCD",
+    "amount": 431,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-29T10:42:14.282950"
+  },
+  {
+    "_id": "bEBCAffD32ec53BF9b60AC3c",
+    "amount": 56,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-23T10:42:14.282991"
+  },
+  {
+    "_id": "Ce0f8d0cB482Dcd4FaAc7549",
+    "amount": 571,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-17T10:42:14.283036"
+  },
+  {
+    "_id": "d8feCBa7BDEc0B20DcEA4DC7",
+    "amount": 825,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-20T10:42:14.283079"
+  },
+  {
+    "_id": "07B6feE59FcFBf4fb0bcDaff",
+    "amount": 545,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-11T10:42:14.283120"
+  },
+  {
+    "_id": "07E6FbB5408FdC38ceA4bBDB",
+    "amount": 767,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-07T10:42:14.283161"
+  },
+  {
+    "_id": "EC49008A75eaF0f5CCACD5C1",
+    "amount": 311,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-28T10:42:14.283201"
+  },
+  {
+    "_id": "bC0b4Aec8734BD25888dCb4c",
+    "amount": 367,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-19T10:42:14.283242"
+  },
+  {
+    "_id": "ae26C783c7dd74ac017CCEfb",
+    "amount": 684,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-29T10:42:14.283283"
+  },
+  {
+    "_id": "02EBd46E96D32EbEddB1933c",
+    "amount": 356,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-29T10:42:14.283323"
+  },
+  {
+    "_id": "6Ea41bF85CfB966eB26bdeC4",
+    "amount": 286,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-01T10:42:14.283363"
+  },
+  {
+    "_id": "13Adba28e3A8152ECef17FdD",
+    "amount": 25,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-27T10:42:14.283404"
+  },
+  {
+    "_id": "D5c3Ed1fE01FAB1F4D47aDdB",
+    "amount": 740,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-05T10:42:14.283446"
+  },
+  {
+    "_id": "38e9047012ca90BB5d2f65fe",
+    "amount": 830,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-04T10:42:14.283486"
+  },
+  {
+    "_id": "b0B2bB44CeB5c8591a97e9E1",
+    "amount": 984,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-18T10:42:14.283526"
+  },
+  {
+    "_id": "1Feb5a1C0A007da0F53B0c1F",
+    "amount": 850,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-15T10:42:14.283567"
+  },
+  {
+    "_id": "da348e9e7fD9a4C76A8EA6F0",
+    "amount": 554,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-29T10:42:14.283607"
+  },
+  {
+    "_id": "48cfd26EFADddc9Eff8E1a93",
+    "amount": 78,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-22T10:42:14.283647"
+  },
+  {
+    "_id": "26abe0F506cB4baEefBCe6bd",
+    "amount": 984,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-04T10:42:14.283688"
+  },
+  {
+    "_id": "b31dea5CCF75c79e929638FD",
+    "amount": 548,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-19T10:42:14.283728"
+  },
+  {
+    "_id": "5FD7FB5c1Cdc48eE3a0E91b3",
+    "amount": 62,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-25T10:42:14.283768"
+  },
+  {
+    "_id": "e5D2141Ef1AF9c3f93CA9c89",
+    "amount": 800,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-19T10:42:14.283812"
+  },
+  {
+    "_id": "a5eB0F74E523F07eFefD8cd4",
+    "amount": 797,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-03T10:42:14.283854"
+  },
+  {
+    "_id": "0e9CAACc258aff95Bc170D1C",
+    "amount": 23,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-16T10:42:14.283894"
+  },
+  {
+    "_id": "F43aEEaff6eEd650ecF77Cf6",
+    "amount": 870,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-31T10:42:14.283934"
+  },
+  {
+    "_id": "FefEc9cda7Dba3252750Fa86",
+    "amount": 931,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-20T10:42:14.283975"
+  },
+  {
+    "_id": "5F14fbD56baAEaCA6a93fEEb",
+    "amount": 151,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-14T10:42:14.284015"
+  },
+  {
+    "_id": "dABD4EA4bBB56BD896aDC8e6",
+    "amount": 730,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-13T10:42:14.284066"
+  },
+  {
+    "_id": "2E3AaDfd4aC093e3b0cE5d22",
+    "amount": 679,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-13T10:42:14.284109"
+  },
+  {
+    "_id": "4090eC08dfA79aa85C0a34A9",
+    "amount": 642,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-07T10:42:14.284523"
+  },
+  {
+    "_id": "0948D7eDf5A478AeD396cc9c",
+    "amount": 579,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-08T10:42:14.284552"
+  },
+  {
+    "_id": "d82bdE43FB241Ed99A2f5a0c",
+    "amount": 711,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-05T10:42:14.284579"
+  },
+  {
+    "_id": "3C2B9DB479aEDBeE631Bd2be",
+    "amount": 672,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-11T10:42:14.284618"
+  },
+  {
+    "_id": "f88A4ccDcBa7d0C630Ccb1AF",
+    "amount": 597,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-10T10:42:14.284685"
+  },
+  {
+    "_id": "a10A2638A4Cc1441683Bbaad",
+    "amount": 963,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-04T10:42:14.284729"
+  },
+  {
+    "_id": "316ccd54D46a2Ed143C9e5f3",
+    "amount": 717,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-31T10:42:14.284746"
+  },
+  {
+    "_id": "afDCD71DAfbA916b1E0B150E",
+    "amount": 476,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-02T10:42:14.284762"
+  },
+  {
+    "_id": "471A45FfC2a4Cd6abf3ECaeB",
+    "amount": 826,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-14T10:42:14.284777"
+  },
+  {
+    "_id": "f74beDD92ec77b3dB28EE593",
+    "amount": 485,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-23T10:42:14.284792"
+  },
+  {
+    "_id": "4Ad3aEe0A0DB2E8297eDaa90",
+    "amount": 175,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-25T10:42:14.284807"
+  },
+  {
+    "_id": "24490E5b83620CFfFa583eEF",
+    "amount": 980,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-04T10:42:14.284829"
+  },
+  {
+    "_id": "6B3e9b3CEd1ecF5AaE44f6ff",
+    "amount": 657,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-13T10:42:14.284844"
+  },
+  {
+    "_id": "0ED0E1dc1c91C7AecA38990D",
+    "amount": 785,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-06T10:42:14.284859"
+  },
+  {
+    "_id": "23Ecf43Dbd954Fda4885ca23",
+    "amount": 982,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-21T10:42:14.284877"
+  },
+  {
+    "_id": "eD582CfcaB589bC22eB0BBBa",
+    "amount": 974,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-31T10:42:14.284892"
+  },
+  {
+    "_id": "BecA62f5744cfcC2A7EfeC7D",
+    "amount": 998,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-13T10:42:14.284907"
+  },
+  {
+    "_id": "189B1ea8DbF3Ea5FE580DEAE",
+    "amount": 306,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-13T10:42:14.284922"
+  },
+  {
+    "_id": "145802e02A81e9C8bCb0e41E",
+    "amount": 230,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-22T10:42:14.284938"
+  },
+  {
+    "_id": "ee1D2ddf83eEdfD6cBFbFCd0",
+    "amount": 600,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-25T10:42:14.284953"
+  },
+  {
+    "_id": "bAddB4E5Dfcfe7B5DA1D2FfC",
+    "amount": 40,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-28T10:42:14.284968"
+  },
+  {
+    "_id": "141559afcE7C2C32B401f028",
+    "amount": 434,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-23T10:42:14.284983"
+  },
+  {
+    "_id": "87aE7ea318bd541b2CE87A3A",
+    "amount": 573,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-03T10:42:14.284998"
+  },
+  {
+    "_id": "4c36C2fAbEe75AABBbE3bd0C",
+    "amount": 138,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-31T10:42:14.285013"
+  },
+  {
+    "_id": "11E73185fcaB91a02FA1b4a7",
+    "amount": 417,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-24T10:42:14.285028"
+  },
+  {
+    "_id": "8cbB8Ddd2E9EFbeacF930b08",
+    "amount": 228,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-12T10:42:14.285042"
+  },
+  {
+    "_id": "7F22756Ce161c099c2A3470A",
+    "amount": 355,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-01T10:42:14.285057"
+  },
+  {
+    "_id": "856732c9E398b9Ba79e253ee",
+    "amount": 887,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-06T10:42:14.285072"
+  },
+  {
+    "_id": "d795eeD5AE8adCe6Bc2fc1aB",
+    "amount": 780,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-14T10:42:14.285086"
+  },
+  {
+    "_id": "Ac68fe4048FA22f9C01373D6",
+    "amount": 773,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-25T10:42:14.285102"
+  },
+  {
+    "_id": "1ADEdbc108D8B1ed03cBCe1f",
+    "amount": 482,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-18T10:42:14.285118"
+  },
+  {
+    "_id": "ffF13597072DCE9e6dcf0FBD",
+    "amount": 532,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-06T10:42:14.285133"
+  },
+  {
+    "_id": "b6E1BdADCcb17FfEe59BeCF6",
+    "amount": 700,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-07T10:42:14.285148"
+  },
+  {
+    "_id": "0924Ce5C2C0656Fe049F25bD",
+    "amount": 167,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-18T10:42:14.285165"
+  },
+  {
+    "_id": "e2EdFDFCfebffF69ba1ECd3F",
+    "amount": 720,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-18T10:42:14.285183"
+  },
+  {
+    "_id": "A0Ecda044EF3B959A640d380",
+    "amount": 734,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-03T10:42:14.285198"
+  },
+  {
+    "_id": "c7cdDFfc1172B88253De19ED",
+    "amount": 43,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-19T10:42:14.285213"
+  },
+  {
+    "_id": "46b4E25a2A999ABC2Fbe1DdA",
+    "amount": 710,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-04T10:42:14.285227"
+  },
+  {
+    "_id": "fCAfEa3eBBffC9edd8eDFcDE",
+    "amount": 279,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-03T10:42:14.285242"
+  },
+  {
+    "_id": "5Cd1847def94FeAF81f50bAB",
+    "amount": 920,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-15T10:42:14.285257"
+  },
+  {
+    "_id": "6ecb77C3a9C8De1e6CD67DD0",
+    "amount": 922,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-17T10:42:14.285272"
+  },
+  {
+    "_id": "2EA99033BdF48A721568AcD9",
+    "amount": 516,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-06T10:42:14.285287"
+  },
+  {
+    "_id": "7e78c314CafEbeaeA96A9A6e",
+    "amount": 325,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-08T10:42:14.285302"
+  },
+  {
+    "_id": "D4c0Cf7C9B4F08653Fdde508",
+    "amount": 312,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-16T10:42:14.285317"
+  },
+  {
+    "_id": "03A7DA2B1dA33e050bF9fCEd",
+    "amount": 771,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-29T10:42:14.285332"
+  },
+  {
+    "_id": "3E5FC03512E7D6D3A2aAF1Ff",
+    "amount": 786,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-18T10:42:14.285347"
+  },
+  {
+    "_id": "2a8BEeAcEabd260e641B0d40",
+    "amount": 120,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-28T10:42:14.285362"
+  },
+  {
+    "_id": "F8EDb2baAcC159b29eC1d1D9",
+    "amount": 827,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-11T10:42:14.285376"
+  },
+  {
+    "_id": "dF83934bCa92b8eB92bb282F",
+    "amount": 895,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-01T10:42:14.285391"
+  },
+  {
+    "_id": "F122dB3Cb35ecDd60C0F87AF",
+    "amount": 252,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-06T10:42:14.285406"
+  },
+  {
+    "_id": "E5f0CD35eD7BbB8D79Ab847F",
+    "amount": 670,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-24T10:42:14.285421"
+  },
+  {
+    "_id": "8B1ECB1E01a0eFEf25bdCdC1",
+    "amount": 226,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-17T10:42:14.285436"
+  },
+  {
+    "_id": "B4E2c5f5daea5fd7944A45Eb",
+    "amount": 966,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-28T10:42:14.285450"
+  },
+  {
+    "_id": "Ccaa870A28CaEf284Fdf76C5",
+    "amount": 661,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-13T10:42:14.285465"
+  },
+  {
+    "_id": "7054365b7Bd2dB96b1fB4c2e",
+    "amount": 866,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-08T10:42:14.285480"
+  },
+  {
+    "_id": "C0CefcF04BbB904aeAe7BeBB",
+    "amount": 354,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-05T10:42:14.285495"
+  },
+  {
+    "_id": "b79F57763B2fFc67D59cA585",
+    "amount": 452,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-19T10:42:14.285510"
+  },
+  {
+    "_id": "7b01D0ef79EBA0ae34BB0855",
+    "amount": 984,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-08T10:42:14.285528"
+  },
+  {
+    "_id": "C9FC22705Bf733C6734D38e8",
+    "amount": 829,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-27T10:42:14.285546"
+  },
+  {
+    "_id": "27771Fa09bACc88cEAf5Bdac",
+    "amount": 674,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-21T10:42:14.285561"
+  },
+  {
+    "_id": "77c35fC04EaAA20e7633E7EC",
+    "amount": 831,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-27T10:42:14.285576"
+  },
+  {
+    "_id": "7eC35f73FcE352cecaB590a7",
+    "amount": 421,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-08T10:42:14.285590"
+  },
+  {
+    "_id": "16e0cdf9eEB02009cA649c88",
+    "amount": 833,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-24T10:42:14.285606"
+  },
+  {
+    "_id": "BeCFC8cF616ceecF09103aA8",
+    "amount": 349,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-15T10:42:14.285620"
+  },
+  {
+    "_id": "EC4e3Ccdc942A58974342bbf",
+    "amount": 475,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-24T10:42:14.285635"
+  },
+  {
+    "_id": "feF69dAfb8bB22e3fff642fE",
+    "amount": 33,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-02T10:42:14.285651"
+  },
+  {
+    "_id": "bf711aCFB8e539FBBaf0c2df",
+    "amount": 349,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-13T10:42:14.285665"
+  },
+  {
+    "_id": "023982EbE58a8dfeA0C90Cd3",
+    "amount": 949,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-05T10:42:14.285680"
+  },
+  {
+    "_id": "a744FDe1c4ACaFcbdDa49De5",
+    "amount": 899,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-20T10:42:14.285695"
+  },
+  {
+    "_id": "ffA4532071Ad7fA63fc3266b",
+    "amount": 251,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-05T10:42:14.285709"
+  },
+  {
+    "_id": "B24ba2F72c7f2A2809650CAD",
+    "amount": 639,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-04T10:42:14.285724"
+  },
+  {
+    "_id": "bDa15d8b68864Ed9fbbfd5Ba",
+    "amount": 892,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-15T10:42:14.285739"
+  },
+  {
+    "_id": "411F129F3d0ff1a13D03e6c1",
+    "amount": 23,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-18T10:42:14.285754"
+  },
+  {
+    "_id": "Db743F5dA0a4C0D10010fDD9",
+    "amount": 488,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-03T10:42:14.285768"
+  },
+  {
+    "_id": "643DCB89a58AcEbd08d4ADA8",
+    "amount": 784,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-27T10:42:14.285783"
+  },
+  {
+    "_id": "dC276a39FBA553A04e690d4b",
+    "amount": 794,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-04T10:42:14.285797"
+  },
+  {
+    "_id": "Fb92Bc4c8a7C5db0bE0a6Af7",
+    "amount": 982,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-29T10:42:14.285812"
+  },
+  {
+    "_id": "8d9FB570FfD0E4e4335bfB1f",
+    "amount": 165,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-11T10:42:14.285827"
+  },
+  {
+    "_id": "2011BEDd1696985FfaC3197f",
+    "amount": 708,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-20T10:42:14.285842"
+  },
+  {
+    "_id": "A91fc2Ff8c71BdbC5DFc05cB",
+    "amount": 616,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-31T10:42:14.285857"
+  },
+  {
+    "_id": "14c3c2Cfce0BBa9859e6B0Fd",
+    "amount": 960,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-01T10:42:14.285875"
+  },
+  {
+    "_id": "894D8ef2DBF39b52Bf20525E",
+    "amount": 633,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-27T10:42:14.285889"
+  },
+  {
+    "_id": "dbA2daB2a0Ba2eAb9FeFDdAA",
+    "amount": 50,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-09T10:42:14.285904"
+  },
+  {
+    "_id": "8A7e9d6E273B3bBc49D4cfa8",
+    "amount": 387,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-22T10:42:14.285922"
+  },
+  {
+    "_id": "CF932fDdb40461F75Ff608Ae",
+    "amount": 725,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-29T10:42:14.285937"
+  },
+  {
+    "_id": "aEAfFF3445C03735e0A87e5f",
+    "amount": 817,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-22T10:42:14.285951"
+  },
+  {
+    "_id": "b38f6bADDb1de2D8fA3deF4d",
+    "amount": 399,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-15T10:42:14.285966"
+  },
+  {
+    "_id": "FDAde459BEbAd8BB2b7DCF0b",
+    "amount": 290,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-22T10:42:14.285981"
+  },
+  {
+    "_id": "bade62911Ef44eAf8c6FEDeC",
+    "amount": 414,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-05T10:42:14.285995"
+  },
+  {
+    "_id": "C0EE57a0c410E687CA9e4ce6",
+    "amount": 542,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-24T10:42:14.286010"
+  },
+  {
+    "_id": "d447D55bA9eBeA121AFe9FDf",
+    "amount": 573,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-11T10:42:14.286026"
+  },
+  {
+    "_id": "CE8d415e22FF78a2eCcc4Eb1",
+    "amount": 414,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-28T10:42:14.286040"
+  },
+  {
+    "_id": "ADbB3C2A3694fe35A92f4aef",
+    "amount": 344,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-27T10:42:14.286055"
+  },
+  {
+    "_id": "D4DcD8a999eC9b3dFb2Fb584",
+    "amount": 9,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-30T10:42:14.286070"
+  },
+  {
+    "_id": "7A9125CAc3f6e8eb560EbD76",
+    "amount": 370,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-28T10:42:14.286085"
+  },
+  {
+    "_id": "BCBC3509B0F57f87C60D20Ce",
+    "amount": 269,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-19T10:42:14.286100"
+  },
+  {
+    "_id": "0b0fCF5Aa813aCE627bcdDf5",
+    "amount": 62,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-29T10:42:14.286114"
+  },
+  {
+    "_id": "581f0DD870b40BFE0fedc3B4",
+    "amount": 157,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-16T10:42:14.286130"
+  },
+  {
+    "_id": "9EE5cBA9BCDeFBBDeA21f0ED",
+    "amount": 603,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-22T10:42:14.286145"
+  },
+  {
+    "_id": "DbcFbFd83Ca238d6E3DcAa19",
+    "amount": 430,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-16T10:42:14.286159"
+  },
+  {
+    "_id": "9B4Dc41fD9BdE3CFE5FF8Dc5",
+    "amount": 541,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-23T10:42:14.286174"
+  },
+  {
+    "_id": "7CE6F6DaCA0A03a6bAfDDA7D",
+    "amount": 57,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-21T10:42:14.286189"
+  },
+  {
+    "_id": "3bbaC1d204e674EBbd5285e0",
+    "amount": 890,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-12T10:42:14.286204"
+  },
+  {
+    "_id": "5F14fbD56baAEaCA6a93fEEb",
+    "amount": 151,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-14T10:42:14.284015"
+  },
+  {
+    "_id": "dABD4EA4bBB56BD896aDC8e6",
+    "amount": 730,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-13T10:42:14.284066"
+  },
+  {
+    "_id": "2E3AaDfd4aC093e3b0cE5d22",
+    "amount": 679,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-13T10:42:14.284109"
+  },
+  {
+    "_id": "4090eC08dfA79aa85C0a34A9",
+    "amount": 642,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-07T10:42:14.284523"
+  },
+  {
+    "_id": "0948D7eDf5A478AeD396cc9c",
+    "amount": 579,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-08T10:42:14.284552"
+  },
+  {
+    "_id": "d82bdE43FB241Ed99A2f5a0c",
+    "amount": 711,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-05T10:42:14.284579"
+  },
+  {
+    "_id": "3C2B9DB479aEDBeE631Bd2be",
+    "amount": 672,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-11T10:42:14.284618"
+  },
+  {
+    "_id": "f88A4ccDcBa7d0C630Ccb1AF",
+    "amount": 597,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-10T10:42:14.284685"
+  },
+  {
+    "_id": "a10A2638A4Cc1441683Bbaad",
+    "amount": 963,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-04T10:42:14.284729"
+  },
+  {
+    "_id": "316ccd54D46a2Ed143C9e5f3",
+    "amount": 717,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-31T10:42:14.284746"
+  },
+  {
+    "_id": "afDCD71DAfbA916b1E0B150E",
+    "amount": 476,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-02T10:42:14.284762"
+  },
+  {
+    "_id": "471A45FfC2a4Cd6abf3ECaeB",
+    "amount": 826,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-14T10:42:14.284777"
+  },
+  {
+    "_id": "f74beDD92ec77b3dB28EE593",
+    "amount": 485,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-23T10:42:14.284792"
+  },
+  {
+    "_id": "4Ad3aEe0A0DB2E8297eDaa90",
+    "amount": 175,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-25T10:42:14.284807"
+  },
+  {
+    "_id": "24490E5b83620CFfFa583eEF",
+    "amount": 980,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-04T10:42:14.284829"
+  },
+  {
+    "_id": "6B3e9b3CEd1ecF5AaE44f6ff",
+    "amount": 657,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-13T10:42:14.284844"
+  },
+  {
+    "_id": "0ED0E1dc1c91C7AecA38990D",
+    "amount": 785,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-06T10:42:14.284859"
+  },
+  {
+    "_id": "23Ecf43Dbd954Fda4885ca23",
+    "amount": 982,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-21T10:42:14.284877"
+  },
+  {
+    "_id": "eD582CfcaB589bC22eB0BBBa",
+    "amount": 974,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-31T10:42:14.284892"
+  },
+  {
+    "_id": "BecA62f5744cfcC2A7EfeC7D",
+    "amount": 998,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-13T10:42:14.284907"
+  },
+  {
+    "_id": "189B1ea8DbF3Ea5FE580DEAE",
+    "amount": 306,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-13T10:42:14.284922"
+  },
+  {
+    "_id": "145802e02A81e9C8bCb0e41E",
+    "amount": 230,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-22T10:42:14.284938"
+  },
+  {
+    "_id": "ee1D2ddf83eEdfD6cBFbFCd0",
+    "amount": 600,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-25T10:42:14.284953"
+  },
+  {
+    "_id": "bAddB4E5Dfcfe7B5DA1D2FfC",
+    "amount": 40,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-28T10:42:14.284968"
+  },
+  {
+    "_id": "141559afcE7C2C32B401f028",
+    "amount": 434,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-23T10:42:14.284983"
+  },
+  {
+    "_id": "87aE7ea318bd541b2CE87A3A",
+    "amount": 573,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-03T10:42:14.284998"
+  },
+  {
+    "_id": "4c36C2fAbEe75AABBbE3bd0C",
+    "amount": 138,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-31T10:42:14.285013"
+  },
+  {
+    "_id": "11E73185fcaB91a02FA1b4a7",
+    "amount": 417,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-24T10:42:14.285028"
+  },
+  {
+    "_id": "8cbB8Ddd2E9EFbeacF930b08",
+    "amount": 228,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-12T10:42:14.285042"
+  },
+  {
+    "_id": "7F22756Ce161c099c2A3470A",
+    "amount": 355,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-01T10:42:14.285057"
+  },
+  {
+    "_id": "856732c9E398b9Ba79e253ee",
+    "amount": 887,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-06T10:42:14.285072"
+  },
+  {
+    "_id": "d795eeD5AE8adCe6Bc2fc1aB",
+    "amount": 780,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-14T10:42:14.285086"
+  },
+  {
+    "_id": "Ac68fe4048FA22f9C01373D6",
+    "amount": 773,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-25T10:42:14.285102"
+  },
+  {
+    "_id": "1ADEdbc108D8B1ed03cBCe1f",
+    "amount": 482,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-18T10:42:14.285118"
+  },
+  {
+    "_id": "ffF13597072DCE9e6dcf0FBD",
+    "amount": 532,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-06T10:42:14.285133"
+  },
+  {
+    "_id": "b6E1BdADCcb17FfEe59BeCF6",
+    "amount": 700,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-07T10:42:14.285148"
+  },
+  {
+    "_id": "0924Ce5C2C0656Fe049F25bD",
+    "amount": 167,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-18T10:42:14.285165"
+  },
+  {
+    "_id": "e2EdFDFCfebffF69ba1ECd3F",
+    "amount": 720,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-18T10:42:14.285183"
+  },
+  {
+    "_id": "A0Ecda044EF3B959A640d380",
+    "amount": 734,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-03T10:42:14.285198"
+  },
+  {
+    "_id": "c7cdDFfc1172B88253De19ED",
+    "amount": 43,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-19T10:42:14.285213"
+  },
+  {
+    "_id": "46b4E25a2A999ABC2Fbe1DdA",
+    "amount": 710,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-04T10:42:14.285227"
+  },
+  {
+    "_id": "fCAfEa3eBBffC9edd8eDFcDE",
+    "amount": 279,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-03T10:42:14.285242"
+  },
+  {
+    "_id": "5Cd1847def94FeAF81f50bAB",
+    "amount": 920,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-15T10:42:14.285257"
+  },
+  {
+    "_id": "6ecb77C3a9C8De1e6CD67DD0",
+    "amount": 922,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-17T10:42:14.285272"
+  },
+  {
+    "_id": "2EA99033BdF48A721568AcD9",
+    "amount": 516,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-06T10:42:14.285287"
+  },
+  {
+    "_id": "7e78c314CafEbeaeA96A9A6e",
+    "amount": 325,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-08T10:42:14.285302"
+  },
+  {
+    "_id": "D4c0Cf7C9B4F08653Fdde508",
+    "amount": 312,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-16T10:42:14.285317"
+  },
+  {
+    "_id": "03A7DA2B1dA33e050bF9fCEd",
+    "amount": 771,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-29T10:42:14.285332"
+  },
+  {
+    "_id": "3E5FC03512E7D6D3A2aAF1Ff",
+    "amount": 786,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-18T10:42:14.285347"
+  },
+  {
+    "_id": "2a8BEeAcEabd260e641B0d40",
+    "amount": 120,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-28T10:42:14.285362"
+  },
+  {
+    "_id": "F8EDb2baAcC159b29eC1d1D9",
+    "amount": 827,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-11T10:42:14.285376"
+  },
+  {
+    "_id": "dF83934bCa92b8eB92bb282F",
+    "amount": 895,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-01T10:42:14.285391"
+  },
+  {
+    "_id": "F122dB3Cb35ecDd60C0F87AF",
+    "amount": 252,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-06T10:42:14.285406"
+  },
+  {
+    "_id": "E5f0CD35eD7BbB8D79Ab847F",
+    "amount": 670,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-24T10:42:14.285421"
+  },
+  {
+    "_id": "8B1ECB1E01a0eFEf25bdCdC1",
+    "amount": 226,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-17T10:42:14.285436"
+  },
+  {
+    "_id": "B4E2c5f5daea5fd7944A45Eb",
+    "amount": 966,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-28T10:42:14.285450"
+  },
+  {
+    "_id": "Ccaa870A28CaEf284Fdf76C5",
+    "amount": 661,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-13T10:42:14.285465"
+  },
+  {
+    "_id": "7054365b7Bd2dB96b1fB4c2e",
+    "amount": 866,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-08T10:42:14.285480"
+  },
+  {
+    "_id": "C0CefcF04BbB904aeAe7BeBB",
+    "amount": 354,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-05T10:42:14.285495"
+  },
+  {
+    "_id": "b79F57763B2fFc67D59cA585",
+    "amount": 452,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-19T10:42:14.285510"
+  },
+  {
+    "_id": "7b01D0ef79EBA0ae34BB0855",
+    "amount": 984,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-08T10:42:14.285528"
+  },
+  {
+    "_id": "C9FC22705Bf733C6734D38e8",
+    "amount": 829,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-27T10:42:14.285546"
+  },
+  {
+    "_id": "27771Fa09bACc88cEAf5Bdac",
+    "amount": 674,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-21T10:42:14.285561"
+  },
+  {
+    "_id": "77c35fC04EaAA20e7633E7EC",
+    "amount": 831,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-27T10:42:14.285576"
+  },
+  {
+    "_id": "7eC35f73FcE352cecaB590a7",
+    "amount": 421,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-08T10:42:14.285590"
+  },
+  {
+    "_id": "16e0cdf9eEB02009cA649c88",
+    "amount": 833,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-24T10:42:14.285606"
+  },
+  {
+    "_id": "BeCFC8cF616ceecF09103aA8",
+    "amount": 349,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-15T10:42:14.285620"
+  },
+  {
+    "_id": "EC4e3Ccdc942A58974342bbf",
+    "amount": 475,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-24T10:42:14.285635"
+  },
+  {
+    "_id": "feF69dAfb8bB22e3fff642fE",
+    "amount": 33,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-02T10:42:14.285651"
+  },
+  {
+    "_id": "bf711aCFB8e539FBBaf0c2df",
+    "amount": 349,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-13T10:42:14.285665"
+  },
+  {
+    "_id": "023982EbE58a8dfeA0C90Cd3",
+    "amount": 949,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-05T10:42:14.285680"
+  },
+  {
+    "_id": "a744FDe1c4ACaFcbdDa49De5",
+    "amount": 899,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-20T10:42:14.285695"
+  },
+  {
+    "_id": "ffA4532071Ad7fA63fc3266b",
+    "amount": 251,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-05T10:42:14.285709"
+  },
+  {
+    "_id": "B24ba2F72c7f2A2809650CAD",
+    "amount": 639,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-04T10:42:14.285724"
+  },
+  {
+    "_id": "bDa15d8b68864Ed9fbbfd5Ba",
+    "amount": 892,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-15T10:42:14.285739"
+  },
+  {
+    "_id": "411F129F3d0ff1a13D03e6c1",
+    "amount": 23,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-18T10:42:14.285754"
+  },
+  {
+    "_id": "Db743F5dA0a4C0D10010fDD9",
+    "amount": 488,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-03T10:42:14.285768"
+  },
+  {
+    "_id": "643DCB89a58AcEbd08d4ADA8",
+    "amount": 784,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-27T10:42:14.285783"
+  },
+  {
+    "_id": "dC276a39FBA553A04e690d4b",
+    "amount": 794,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-04T10:42:14.285797"
+  },
+  {
+    "_id": "Fb92Bc4c8a7C5db0bE0a6Af7",
+    "amount": 982,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-29T10:42:14.285812"
+  },
+  {
+    "_id": "8d9FB570FfD0E4e4335bfB1f",
+    "amount": 165,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-11T10:42:14.285827"
+  },
+  {
+    "_id": "2011BEDd1696985FfaC3197f",
+    "amount": 708,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-20T10:42:14.285842"
+  },
+  {
+    "_id": "A91fc2Ff8c71BdbC5DFc05cB",
+    "amount": 616,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-31T10:42:14.285857"
+  },
+  {
+    "_id": "14c3c2Cfce0BBa9859e6B0Fd",
+    "amount": 960,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-01T10:42:14.285875"
+  },
+  {
+    "_id": "894D8ef2DBF39b52Bf20525E",
+    "amount": 633,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-27T10:42:14.285889"
+  },
+  {
+    "_id": "dbA2daB2a0Ba2eAb9FeFDdAA",
+    "amount": 50,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-09T10:42:14.285904"
+  },
+  {
+    "_id": "8A7e9d6E273B3bBc49D4cfa8",
+    "amount": 387,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-22T10:42:14.285922"
+  },
+  {
+    "_id": "CF932fDdb40461F75Ff608Ae",
+    "amount": 725,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-29T10:42:14.285937"
+  },
+  {
+    "_id": "aEAfFF3445C03735e0A87e5f",
+    "amount": 817,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-22T10:42:14.285951"
+  },
+  {
+    "_id": "b38f6bADDb1de2D8fA3deF4d",
+    "amount": 399,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-15T10:42:14.285966"
+  },
+  {
+    "_id": "FDAde459BEbAd8BB2b7DCF0b",
+    "amount": 290,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-22T10:42:14.285981"
+  },
+  {
+    "_id": "bade62911Ef44eAf8c6FEDeC",
+    "amount": 414,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-05T10:42:14.285995"
+  },
+  {
+    "_id": "C0EE57a0c410E687CA9e4ce6",
+    "amount": 542,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-24T10:42:14.286010"
+  },
+  {
+    "_id": "d447D55bA9eBeA121AFe9FDf",
+    "amount": 573,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-11T10:42:14.286026"
+  },
+  {
+    "_id": "CE8d415e22FF78a2eCcc4Eb1",
+    "amount": 414,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-28T10:42:14.286040"
+  },
+  {
+    "_id": "ADbB3C2A3694fe35A92f4aef",
+    "amount": 344,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-27T10:42:14.286055"
+  },
+  {
+    "_id": "D4DcD8a999eC9b3dFb2Fb584",
+    "amount": 9,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-30T10:42:14.286070"
+  },
+  {
+    "_id": "7A9125CAc3f6e8eb560EbD76",
+    "amount": 370,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-28T10:42:14.286085"
+  },
+  {
+    "_id": "BCBC3509B0F57f87C60D20Ce",
+    "amount": 269,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-19T10:42:14.286100"
+  },
+  {
+    "_id": "0b0fCF5Aa813aCE627bcdDf5",
+    "amount": 62,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2024-12-29T10:42:14.286114"
+  },
+  {
+    "_id": "581f0DD870b40BFE0fedc3B4",
+    "amount": 157,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-16T10:42:14.286130"
+  },
+  {
+    "_id": "9EE5cBA9BCDeFBBDeA21f0ED",
+    "amount": 603,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-22T10:42:14.286145"
+  },
+  {
+    "_id": "DbcFbFd83Ca238d6E3DcAa19",
+    "amount": 430,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-16T10:42:14.286159"
+  },
+  {
+    "_id": "9B4Dc41fD9BdE3CFE5FF8Dc5",
+    "amount": 541,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-23T10:42:14.286174"
+  },
+  {
+    "_id": "7CE6F6DaCA0A03a6bAfDDA7D",
+    "amount": 57,
+    "category": "credit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-21T10:42:14.286189"
+  },
+  {
+    "_id": "3bbaC1d204e674EBbd5285e0",
+    "amount": 890,
+    "category": "debit",
+    "description": "This is a description of the transaction.",
+    "date": "2025-01-12T10:42:14.286204"
+  }
+]

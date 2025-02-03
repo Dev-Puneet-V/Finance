@@ -7,7 +7,7 @@ const Home: React.FC = () => {
   return (
     <div className="flex h-screen">
       <Sidebar links={links} />
-      <div className="flex-1 p-6 bg-gray-100">
+      <div className="flex-1 p-6 bg-gray-100 overflow-y-auto scrollable">
         <Outlet />
       </div>
     </div>
