@@ -4,6 +4,7 @@ import React, { useState } from "react";
 // import Modal from "../components/Modal";
 import { CreateTransaction } from "../components/CreateTransaction";
 import QuickTransactionGlace from "../components/QuickTransactionGlace";
+import CashFlowSummary from "../components/CashFlowSummary";
 
 // Example data for charts and progress
 // const data = [
@@ -30,8 +31,11 @@ const Dashboard: React.FC = () => {
         </button>
       </div>
       <div>
-        <div>
+        <div className="flex gap-4 ">
           <QuickTransactionGlace />
+        </div>
+        <div className="my-3">
+          <CashFlowSummary />
         </div>
       </div>
       {transactionModalStatus && (
